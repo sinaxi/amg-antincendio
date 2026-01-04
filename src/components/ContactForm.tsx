@@ -97,6 +97,9 @@ const ContactForm = () => {
 
             {/* Right - Form */}
             <div className="bg-card rounded-2xl p-8 shadow-xl">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-6">
+                Contattaci per informazioni
+              </h3>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="nome" className="block text-sm font-medium text-foreground mb-2">
