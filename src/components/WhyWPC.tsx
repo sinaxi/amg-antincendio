@@ -13,10 +13,10 @@ const advantages = [
 
 const WhyWPC = () => {
   return (
-    <section className="py-20 md:py-28 bg-muted">
+    <section id="wpc" className="py-20 md:py-28 bg-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block text-accent font-semibold mb-4 uppercase tracking-wider text-sm">
+          <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
             Il Materiale
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -34,8 +34,8 @@ const WhyWPC = () => {
                 key={index}
                 className="flex items-start gap-3 bg-card p-4 rounded-lg card-elevated"
               >
-                <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-accent-foreground" />
+                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <span className="text-foreground">{advantage}</span>
               </div>

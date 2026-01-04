@@ -39,7 +39,7 @@ const ProductShowcase = () => {
 
           {/* Right Side - Content */}
           <div>
-            <span className="inline-block text-accent font-semibold mb-4 uppercase tracking-wider text-sm">
+            <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
               Design & Qualità
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -58,26 +58,26 @@ const ProductShowcase = () => {
             {/* Features */}
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
-                  <span className="text-accent text-lg">✓</span>
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-primary text-lg">✓</span>
                 </div>
                 <span className="text-foreground font-medium">Modulare su misura</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
-                  <span className="text-accent text-lg">✓</span>
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-primary text-lg">✓</span>
                 </div>
                 <span className="text-foreground font-medium">Personalizzabile</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
-                  <span className="text-accent text-lg">✓</span>
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-primary text-lg">✓</span>
                 </div>
                 <span className="text-foreground font-medium">Privacy totale</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
-                  <span className="text-accent text-lg">✓</span>
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-primary text-lg">✓</span>
                 </div>
                 <span className="text-foreground font-medium">Duratura nel tempo</span>
               </div>
