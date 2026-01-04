@@ -9,6 +9,7 @@ import WhyWPC from "@/components/WhyWPC";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import StickyFooter from "@/components/StickyFooter";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <Testimonials />
       <ContactForm />
       <Footer />
+      <StickyFooter />
     </main>
   );
 };

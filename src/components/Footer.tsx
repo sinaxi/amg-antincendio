@@ -54,17 +54,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-background/20 pt-8 pb-20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/60 text-sm">
             © {currentYear} RecinzioniPro - DAGEM S.r.l. Tutti i diritti riservati.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-2 md:gap-6 text-xs md:text-sm whitespace-nowrap">
             <a href="#" className="text-background/60 hover:text-background transition-colors">
               Privacy Policy
             </a>
+            <span className="text-background/40 md:hidden">-</span>
             <a href="#" className="text-background/60 hover:text-background transition-colors">
               Cookie Policy
             </a>
+            <span className="text-background/40 md:hidden">-</span>
             <a href="#" className="text-background/60 hover:text-background transition-colors">
               Termini e Condizioni
             </a>
