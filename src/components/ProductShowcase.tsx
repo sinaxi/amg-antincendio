@@ -83,7 +83,7 @@ const ProductShowcase = () => {
               </div>
             </div>
 
-            <Button variant="cta" size="xl" onClick={scrollToContact}>
+            <Button variant="hero" size="xl" onClick={scrollToContact}>
               Richiedi Preventivo Gratuito
             </Button>
           </div>
