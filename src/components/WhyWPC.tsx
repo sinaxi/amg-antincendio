@@ -15,16 +15,16 @@ const WhyWPC = () => {
   return (
     <section id="wpc" className="py-20 md:py-28 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <article className="max-w-4xl mx-auto text-center">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Il Materiale
+            Materiale WPC per Recinzioni
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Perché Scegliere il WPC?
+            Perché Scegliere Recinzioni in WPC?
           </h2>
           <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Il WPC (Wood Plastic Composite) è un materiale composito che unisce la bellezza naturale del legno 
-            con la durabilità e praticità dei polimeri moderni.
+            Il WPC (Wood Plastic Composite) è il materiale ideale per staccionate e fence: unisce la bellezza naturale del legno 
+            con la durabilità e praticità dei polimeri moderni per recinzioni giardino senza manutenzione.
           </p>
 
           {/* Advantages Grid */}
@@ -43,12 +43,12 @@ const WhyWPC = () => {
           </div>
 
           {/* Stats Banner */}
-          <div className="bg-primary rounded-2xl p-8 md:p-12">
+          <aside className="bg-primary rounded-2xl p-8 md:p-12">
             <h3 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
-              Oltre 2.783 Clienti in Italia
+              Oltre 2.783 Clienti Soddisfatti in Italia
             </h3>
             <p className="text-primary-foreground/80 mb-8">
-              Hanno già scelto le nostre recinzioni e pannelli personalizzati per giardino e outdoor
+              Hanno già scelto le nostre recinzioni modulari e staccionate personalizzabili per giardino, casa e outdoor
             </p>
             <div className="flex flex-wrap justify-center gap-8">
               <div className="text-center">
@@ -64,8 +64,8 @@ const WhyWPC = () => {
                 <div className="text-primary-foreground/70 text-sm">Recensioni</div>
               </div>
             </div>
-          </div>
-        </div>
+          </aside>
+        </article>
       </div>
     </section>
   );

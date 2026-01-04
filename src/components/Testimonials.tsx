@@ -26,22 +26,22 @@ const Testimonials = () => {
     <section className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Testimonianze
+            Recensioni Recinzioni
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Cosa Dicono i Nostri Clienti
+            Opinioni Clienti sulle Nostre Recinzioni
           </h2>
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="flex items-center justify-center gap-2 mb-4" aria-label="Valutazione media 4.94 su 5 stelle">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />
+              <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" aria-hidden="true" />
             ))}
           </div>
           <p className="text-muted-foreground text-lg">
-            Valutazione media 4.94 su 5 basata su oltre 2.783 recensioni verificate
+            Valutazione media 4.94 su 5 basata su oltre 2.783 recensioni verificate di fence e staccionate
           </p>
-        </div>
+        </header>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-6">

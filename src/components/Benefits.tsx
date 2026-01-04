@@ -57,17 +57,17 @@ const Benefits = () => {
     <section id="vantaggi" className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Vantaggi
+            Vantaggi Recinzioni WPC
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Recinzioni e Fence in WPC al Miglior Prezzo del Mercato
+            Recinzioni e Fence in WPC: Qualità al Miglior Prezzo
           </h2>
           <p className="text-muted-foreground text-lg">
-            Soluzioni moderne ed estremamente resistenti, disponibili in 3 diversi colori per personalizzare le tue aree esterne in modo esclusivo
+            Staccionate e pannelli modulari per giardino e casa, estremamente resistenti e disponibili in 3 colori per personalizzare i tuoi spazi esterni
           </p>
-        </div>
+        </header>
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -80,7 +80,7 @@ const Benefits = () => {
               <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                 <benefit.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+              <h3 className="font-display text-xl font-semibold text-foreground mb-2" itemProp="name">
                 {benefit.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">

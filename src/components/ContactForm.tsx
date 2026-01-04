@@ -46,20 +46,20 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contatti" className="py-20 md:py-28 bg-primary">
+    <section id="contatti" className="py-20 md:py-28 bg-primary" aria-labelledby="contact-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
-            <div className="text-primary-foreground">
+            <header className="text-primary-foreground">
               <span className="inline-block text-primary-foreground/80 font-semibold mb-4 uppercase tracking-wider text-sm">
-                Contattaci
+                Preventivo Recinzioni Gratuito
               </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
-                Richiedi il Tuo Preventivo Gratuito
+              <h2 id="contact-heading" className="font-display text-3xl md:text-4xl font-bold mb-6">
+                Richiedi Preventivo per Recinzioni Giardino
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-                Pronto a trasformare il tuo spazio esterno? Contattaci per ricevere un preventivo gratuito personalizzato. 
+                Pronto a trasformare il tuo spazio esterno con fence e staccionate personalizzabili? Contattaci per ricevere un preventivo gratuito per recinzioni modulari. 
                 Ci basta conoscere la lunghezza dell'area ed eventuali tue esigenze specifiche.
               </p>
 
@@ -93,7 +93,7 @@ const ContactForm = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </header>
 
             {/* Right - Form */}
             <div className="bg-card rounded-2xl p-8 shadow-xl">

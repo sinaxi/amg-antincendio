@@ -29,12 +29,12 @@ const Hero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-display text-3xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 animate-fade-in-up opacity-0 animation-delay-100">
-            RECINZIONI DA GIARDINO
-            <span className="block text-primary-foreground/90">AL MIGLIOR PREZZO</span>
+          <h1 className="font-display font-bold text-primary-foreground mb-4 animate-fade-in-up opacity-0 animation-delay-100">
+            <span className="block text-4xl md:text-6xl lg:text-7xl">RECINZIONI DA GIARDINO</span>
+            <span className="block text-2xl md:text-4xl lg:text-5xl text-primary-foreground/90 mt-2">AL MIGLIOR PREZZO DEL MERCATO</span>
           </h1>
 
-          <p className="font-display text-xl md:text-3xl text-primary-foreground/80 mb-8 animate-fade-in-up opacity-0 animation-delay-200">
+          <p className="inline-block font-display text-xl md:text-3xl text-primary-foreground font-semibold mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-6 py-3 rounded-full">
             Modulari e Personalizzabili
           </p>
 
