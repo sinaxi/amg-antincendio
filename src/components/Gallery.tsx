@@ -16,7 +16,7 @@ const images = [
 
 const Gallery = () => {
   return (
-    <section id="galleria" className="py-20 md:py-28 bg-background">
+    <section id="galleria" className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

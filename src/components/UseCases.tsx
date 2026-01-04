@@ -50,7 +50,7 @@ const UseCases = () => {
           {useCases.map((useCase, index) => (
             <div 
               key={index}
-              className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 p-6 rounded-xl text-center hover:bg-primary-foreground/15 transition-all duration-300"
+              className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 p-6 rounded-xl text-center hover:bg-primary-foreground/30 hover:shadow-lg hover:shadow-primary-foreground/20 transition-all duration-300"
             >
               <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <useCase.icon className="w-8 h-8 text-primary-foreground" />
