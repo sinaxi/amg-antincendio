@@ -97,7 +97,7 @@ const ContactForm = () => {
 
             {/* Right - Form */}
             <div className="bg-card rounded-2xl p-8 shadow-xl">
-              <h3 className="font-display text-2xl font-bold text-foreground mb-6">
+              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 whitespace-nowrap">
                 Contattaci per informazioni
               </h3>
               <form onSubmit={handleSubmit} className="space-y-5">

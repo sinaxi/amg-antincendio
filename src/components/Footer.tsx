@@ -6,15 +6,15 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-12 mb-12 text-center lg:text-left">
           {/* Brand */}
-          <div>
+          <div className="lg:max-w-sm">
             <h3 className="font-display text-2xl font-bold mb-4">RecinzioniPro</h3>
             <p className="text-background/70 leading-relaxed mb-4">
               DAGEM OUTDOOR SOLUTIONS - Da oltre vent'anni nel settore delle soluzioni per l'outdoor. 
               Specializzati nella commercializzazione di pavimenti e recinzioni in WPC.
             </p>
-            <div className="flex items-center gap-2 text-background/70">
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-background/70">
               <MapPin className="w-4 h-4" />
               <span>Costa Volpino (BG), Italia</span>
             </div>

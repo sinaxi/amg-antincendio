@@ -7,7 +7,7 @@ const StickyFooter = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40">
-      <div className="bg-primary/80 backdrop-blur-md border-t border-primary-foreground/10 py-3 px-4">
+      <div className="bg-primary/50 backdrop-blur-md border-t border-primary-foreground/10 py-3 px-4">
         <div className="container mx-auto flex justify-center">
           <Button
             variant="secondary"
