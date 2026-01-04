@@ -1,0 +1,104 @@
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import heroImage from "@/assets/hero-fence.jpg";
+
+const Hero = () => {
+  const scrollToContact = () => {
+    document.getElementById("contatti")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      />
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 hero-overlay" />
+      
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
+            <span className="text-primary-foreground/90 text-sm font-medium">
+              economica • personalizzabile • veloce da installare
+            </span>
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 animate-fade-in-up opacity-0 animation-delay-100">
+            RECINZIONI DA GIARDINO
+            <span className="block text-primary-foreground/90">AL MIGLIOR PREZZO</span>
+          </h1>
+
+          <p className="font-display text-2xl md:text-3xl text-primary-foreground/80 mb-8 animate-fade-in-up opacity-0 animation-delay-200">
+            Modulari e Personalizzabili
+          </p>
+
+          {/* Features List */}
+          <ul className="flex flex-wrap justify-center gap-4 md:gap-8 mb-10 animate-fade-in-up opacity-0 animation-delay-300">
+            {[
+              "Facile da installare",
+              "Design moderno ed esclusivo",
+              "3 differenti colori",
+              "Nessuna manutenzione"
+            ].map((feature, index) => (
+              <li key={index} className="flex items-center gap-2 text-primary-foreground/90">
+                <span className="w-2 h-2 bg-accent rounded-full" />
+                <span className="font-medium">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 animation-delay-400">
+            <Button 
+              variant="hero" 
+              size="xl" 
+              onClick={scrollToContact}
+              className="btn-glow"
+            >
+              Richiedi Preventivo Gratuito
+            </Button>
+            <Button 
+              variant="heroOutline" 
+              size="xl"
+              onClick={() => document.getElementById("prodotti")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              Scopri i Prodotti
+            </Button>
+          </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">4.94/5</div>
+              <div className="text-primary-foreground/70 text-sm">Valutazione Media</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">2.783+</div>
+              <div className="text-primary-foreground/70 text-sm">Clienti Soddisfatti</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">20+</div>
+              <div className="text-primary-foreground/70 text-sm">Anni di Esperienza</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <button 
+        onClick={() => document.getElementById("vantaggi")?.scrollIntoView({ behavior: "smooth" })}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors animate-float"
+      >
+        <ChevronDown className="w-8 h-8" />
+      </button>
+    </section>
+  );
+};
+
+export default Hero;
