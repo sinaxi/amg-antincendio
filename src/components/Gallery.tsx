@@ -16,11 +16,11 @@ const images = [
 
 const Gallery = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section id="galleria" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-accent font-semibold mb-4 uppercase tracking-wider text-sm">
+          <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
             Galleria
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">

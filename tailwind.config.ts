@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
+        display: ['Montserrat', 'sans-serif'],
         body: ['DM Sans', 'sans-serif'],
       },
       colors: {
@@ -42,6 +42,10 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+        },
+        "brown-dark": {
+          DEFAULT: "hsl(var(--brown-dark))",
+          foreground: "hsl(var(--brown-dark-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

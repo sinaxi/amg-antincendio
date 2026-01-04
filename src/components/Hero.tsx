@@ -39,16 +39,16 @@ const Hero = () => {
           </p>
 
           {/* Features List */}
-          <ul className="flex flex-wrap justify-center gap-4 md:gap-8 mb-10 animate-fade-in-up opacity-0 animation-delay-300">
+          <ul className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 animate-fade-in-up opacity-0 animation-delay-300">
             {[
               "Facile da installare",
               "Design moderno ed esclusivo",
               "3 differenti colori",
               "Nessuna manutenzione"
             ].map((feature, index) => (
-              <li key={index} className="flex items-center gap-2 text-primary-foreground/90">
+              <li key={index} className="flex items-center gap-2 bg-foreground/30 backdrop-blur-sm px-4 py-2 rounded-full">
                 <span className="w-2 h-2 bg-accent rounded-full" />
-                <span className="font-medium">{feature}</span>
+                <span className="font-medium text-primary-foreground text-sm md:text-base">{feature}</span>
               </li>
             ))}
           </ul>
@@ -67,24 +67,25 @@ const Hero = () => {
               variant="heroOutline" 
               size="xl"
               onClick={() => document.getElementById("prodotti")?.scrollIntoView({ behavior: "smooth" })}
+              className="bg-primary-foreground/10 backdrop-blur-sm"
             >
               Scopri i Prodotti
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 pt-8 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">4.94/5</div>
-              <div className="text-primary-foreground/70 text-sm">Valutazione Media</div>
+              <div className="text-2xl md:text-4xl font-bold text-primary-foreground whitespace-nowrap">4.94/5</div>
+              <div className="text-primary-foreground/70 text-xs md:text-sm">Valutazione</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">2.783+</div>
-              <div className="text-primary-foreground/70 text-sm">Clienti Soddisfatti</div>
+              <div className="text-2xl md:text-4xl font-bold text-primary-foreground whitespace-nowrap">2.783+</div>
+              <div className="text-primary-foreground/70 text-xs md:text-sm">Clienti</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">20+</div>
-              <div className="text-primary-foreground/70 text-sm">Anni di Esperienza</div>
+              <div className="text-2xl md:text-4xl font-bold text-primary-foreground whitespace-nowrap">20+</div>
+              <div className="text-primary-foreground/70 text-xs md:text-sm">Anni</div>
             </div>
           </div>
         </div>

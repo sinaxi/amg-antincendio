@@ -34,14 +34,14 @@ const TargetAudience = () => {
           </div>
 
           {/* For Private */}
-          <div className="bg-secondary p-8 md:p-10 rounded-2xl card-elevated group hover:bg-accent transition-all duration-500">
-            <div className="w-16 h-16 bg-accent/10 group-hover:bg-accent-foreground/20 rounded-full flex items-center justify-center mb-6 transition-colors">
-              <User className="w-8 h-8 text-accent group-hover:text-accent-foreground transition-colors" />
+          <div className="bg-secondary p-8 md:p-10 rounded-2xl card-elevated group hover:bg-primary transition-all duration-500">
+            <div className="w-16 h-16 bg-primary/10 group-hover:bg-primary-foreground/20 rounded-full flex items-center justify-center mb-6 transition-colors">
+              <User className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
             </div>
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground group-hover:text-accent-foreground mb-4 transition-colors">
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary-foreground mb-4 transition-colors">
               Sei un Privato?
             </h3>
-            <p className="text-muted-foreground group-hover:text-accent-foreground/80 mb-6 leading-relaxed transition-colors">
+            <p className="text-muted-foreground group-hover:text-primary-foreground/80 mb-6 leading-relaxed transition-colors">
               Richiedi il nostro catalogo e scopri i prezzi più bassi del mercato! Offriamo prodotti di alta qualità 
               destinati a durare nel tempo, con una vasta gamma di colori per ogni esigenza. Se cerchi soluzioni 
               resistenti e stilose per il tuo giardino, contattaci!
@@ -50,7 +50,7 @@ const TargetAudience = () => {
               variant="outline"
               size="lg"
               onClick={scrollToContact}
-              className="group-hover:border-accent-foreground group-hover:text-accent-foreground group-hover:hover:bg-accent-foreground/10 transition-colors"
+              className="group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors"
             >
               Richiedi il Catalogo
             </Button>

@@ -209,9 +209,8 @@ const ContactForm = () => {
 
                 <Button 
                   type="submit" 
-                  variant="cta" 
                   size="xl" 
-                  className="w-full"
+                  className="w-full bg-brown-dark hover:bg-brown-dark/90 text-brown-dark-foreground"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
