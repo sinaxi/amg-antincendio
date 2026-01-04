@@ -14,43 +14,47 @@ const ProductShowcase = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Image Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <figure className="grid grid-cols-2 gap-4">
             <img 
               src={fence1} 
-              alt="Recinzione WPC giardino marrone" 
+              alt="Recinzione modulare WPC marrone per giardino privato - installazione fai da te" 
               className="rounded-xl shadow-lg w-full h-48 object-cover card-elevated"
+              loading="lazy"
             />
             <img 
               src={fence2} 
-              alt="Pannello recinzione WPC design moderno" 
+              alt="Pannelli fence WPC design moderno per staccionata personalizzabile" 
               className="rounded-xl shadow-lg w-full h-48 object-cover card-elevated mt-8"
+              loading="lazy"
             />
             <img 
               src={fence3} 
-              alt="Fence WPC per privacy giardino" 
+              alt="Fence WPC per privacy giardino e divisorio esterno casa" 
               className="rounded-xl shadow-lg w-full h-48 object-cover card-elevated"
+              loading="lazy"
             />
             <img 
               src={fence4} 
-              alt="Recinzione modulare WPC esterno" 
+              alt="Recinzione modulare WPC resistente per delimitazione spazi esterni" 
               className="rounded-xl shadow-lg w-full h-48 object-cover card-elevated mt-8"
+              loading="lazy"
             />
-          </div>
+          </figure>
 
           {/* Right Side - Content */}
-          <div>
+          <article>
             <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-              Design & Qualità
+              Design & Qualità Recinzioni
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Recinzioni dal Design Moderno Adatte ad Ogni Spazio
+              Staccionate e Recinzioni Giardino dal Design Moderno
             </h2>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              Trasforma il tuo giardino con una recinzione in WPC DAGEM di <strong className="text-foreground">RecinzioniPro</strong>. 
-              Crea uno spazio privato e protetto, lontano dagli sguardi curiosi.
+              Trasforma il tuo giardino con una recinzione modulare in WPC DAGEM di <strong className="text-foreground">RecinzioniPro</strong>. 
+              Crea uno spazio privato e protetto con fence personalizzabili, lontano dagli sguardi curiosi.
             </p>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Recinzioni eleganti e destinate a durare in eterno, in grado di resistere a vento, sole e intemperie, 
+              Recinzioni casa eleganti e destinate a durare in eterno, in grado di resistere a vento, sole e intemperie, 
               <strong className="text-foreground"> senza bisogno di manutenzione</strong>. Facile da installare, personalizzabile 
               e resistente, è la soluzione perfetta per aggiungere stile e privacy al tuo giardino.
             </p>
@@ -83,10 +87,10 @@ const ProductShowcase = () => {
               </div>
             </div>
 
-            <Button variant="hero" size="xl" onClick={scrollToContact}>
+            <Button variant="hero" size="xl" onClick={scrollToContact} aria-label="Richiedi preventivo gratuito per recinzioni giardino">
               Richiedi Preventivo Gratuito
             </Button>
-          </div>
+          </article>
         </div>
       </div>
     </section>

@@ -33,17 +33,17 @@ const UseCases = () => {
     <section className="py-20 md:py-28 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary-foreground/80 font-semibold mb-4 uppercase tracking-wider text-sm">
-            Applicazioni
+            Applicazioni Recinzioni Modulari
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">
-            Recinzioni e Fence Adatte ad Ogni Esigenza
+            Recinzioni e Fence Personalizzabili per Ogni Esigenza
           </h2>
           <p className="text-primary-foreground/80 text-lg">
-            Soluzioni modulari su misura con doghe in WPC che garantiscono design e una protezione totale dagli sguardi indiscreti
+            Staccionate e pannelli modulari su misura con doghe in WPC per giardino, casa e azienda - privacy totale garantita
           </p>
-        </div>
+        </header>
 
         {/* Use Cases Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

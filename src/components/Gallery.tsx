@@ -6,12 +6,12 @@ import gallery5 from "@/assets/gallery-5.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
 
 const images = [
-  { src: gallery1, alt: "Recinzione giardino moderna in WPC marrone" },
-  { src: gallery2, alt: "Pannelli modulari fence fai da te" },
-  { src: gallery3, alt: "Staccionate giardino prezzi competitivi" },
-  { src: gallery4, alt: "Recinzioni design esclusivo" },
-  { src: gallery5, alt: "Pannelli giardino WPC alta qualità" },
-  { src: gallery6, alt: "Soluzione modulare divisione giardino" },
+  { src: gallery1, alt: "Recinzione giardino modulare WPC marrone con design moderno per privacy esterna" },
+  { src: gallery2, alt: "Pannelli fence fai da te per staccionata personalizzabile giardino" },
+  { src: gallery3, alt: "Staccionate giardino WPC prezzi competitivi installazione rapida" },
+  { src: gallery4, alt: "Recinzioni casa design esclusivo per delimitazione spazi esterni" },
+  { src: gallery5, alt: "Pannelli recinzione WPC alta qualità resistenti alle intemperie" },
+  { src: gallery6, alt: "Soluzione modulare fence per divisione giardino e aree private" },
 ];
 
 const Gallery = () => {
@@ -19,17 +19,17 @@ const Gallery = () => {
     <section id="galleria" className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Galleria
+            Galleria Recinzioni
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Lasciati Ispirare
+            Lasciati Ispirare dalle Nostre Recinzioni
           </h2>
           <p className="text-muted-foreground text-lg">
-            Scopri alcune delle nostre realizzazioni e trova l'ispirazione per trasformare il tuo spazio esterno
+            Scopri le nostre realizzazioni di fence e staccionate per giardino e trova ispirazione per trasformare il tuo spazio esterno
           </p>
-        </div>
+        </header>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
@@ -42,6 +42,7 @@ const Gallery = () => {
                 src={image.src} 
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300" />
             </div>
