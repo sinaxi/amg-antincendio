@@ -1,5 +1,3 @@
-import { MapPin } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -10,14 +8,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:max-w-sm">
             <h3 className="font-display text-2xl font-bold mb-4">RecinzioniPro</h3>
-            <p className="text-background/70 leading-relaxed mb-4">
+            <p className="text-background/70 leading-relaxed">
               DAGEM OUTDOOR SOLUTIONS - Da oltre vent'anni nel settore delle soluzioni per l'outdoor. 
-              Specializzati nella commercializzazione di pavimenti e recinzioni in WPC.
+              Specializzati nella commercializzazione di pavimenti e recinzioni in WPC. Costa Volpino (BG), Italia.
             </p>
-            <div className="flex items-center justify-center lg:justify-start gap-2 text-background/70">
-              <MapPin className="w-4 h-4" />
-              <span>Costa Volpino (BG), Italia</span>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -55,7 +49,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-background/20 pt-8 pb-20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-background/60 text-sm">
+          <p className="text-background/60 text-xs md:text-sm whitespace-nowrap">
             © {currentYear} RecinzioniPro - DAGEM S.r.l. Tutti i diritti riservati.
           </p>
           <div className="flex gap-2 md:gap-6 text-xs md:text-sm whitespace-nowrap">
