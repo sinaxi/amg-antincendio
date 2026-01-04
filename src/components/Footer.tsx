@@ -1,0 +1,78 @@
+import { MapPin } from "lucide-react";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-foreground text-background py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Brand */}
+          <div>
+            <h3 className="font-display text-2xl font-bold mb-4">RecinzioniPro</h3>
+            <p className="text-background/70 leading-relaxed mb-4">
+              DAGEM OUTDOOR SOLUTIONS - Da oltre vent'anni nel settore delle soluzioni per l'outdoor. 
+              Specializzati nella commercializzazione di pavimenti e recinzioni in WPC.
+            </p>
+            <div className="flex items-center gap-2 text-background/70">
+              <MapPin className="w-4 h-4" />
+              <span>Costa Volpino (BG), Italia</span>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">Link Rapidi</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#vantaggi" className="text-background/70 hover:text-background transition-colors">
+                  Vantaggi
+                </a>
+              </li>
+              <li>
+                <a href="#prodotti" className="text-background/70 hover:text-background transition-colors">
+                  Prodotti
+                </a>
+              </li>
+              <li>
+                <a href="#contatti" className="text-background/70 hover:text-background transition-colors">
+                  Contattaci
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company Info */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">DAGEM S.r.l.</h4>
+            <address className="not-italic text-background/70 space-y-2">
+              <p>Via Boschetta, 15</p>
+              <p>Costa Volpino (BG)</p>
+              <p>Partita IVA: 04123980163</p>
+            </address>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-background/60 text-sm">
+            © {currentYear} RecinzioniPro - DAGEM S.r.l. Tutti i diritti riservati.
+          </p>
+          <div className="flex gap-6 text-sm">
+            <a href="#" className="text-background/60 hover:text-background transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-background/60 hover:text-background transition-colors">
+              Cookie Policy
+            </a>
+            <a href="#" className="text-background/60 hover:text-background transition-colors">
+              Termini e Condizioni
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
