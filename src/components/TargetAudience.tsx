@@ -9,9 +9,9 @@ const TargetAudience = () => {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {/* For Professionals */}
-          <div className="bg-secondary p-8 md:p-10 rounded-2xl card-elevated group hover:bg-primary transition-all duration-500">
+          <div className="bg-secondary p-6 md:p-10 rounded-2xl card-elevated group hover:bg-primary transition-all duration-500 overflow-hidden">
             <div className="w-16 h-16 bg-primary/10 group-hover:bg-primary-foreground/20 rounded-full flex items-center justify-center mb-6 transition-colors">
               <Briefcase className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
             </div>
@@ -34,7 +34,7 @@ const TargetAudience = () => {
           </div>
 
           {/* For Private */}
-          <div className="bg-secondary p-8 md:p-10 rounded-2xl card-elevated group hover:bg-primary transition-all duration-500">
+          <div className="bg-secondary p-6 md:p-10 rounded-2xl card-elevated group hover:bg-primary transition-all duration-500 overflow-hidden">
             <div className="w-16 h-16 bg-primary/10 group-hover:bg-primary-foreground/20 rounded-full flex items-center justify-center mb-6 transition-colors">
               <User className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
             </div>
