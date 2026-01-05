@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-3 md:px-4 py-2 mb-6 mt-16 md:mt-0 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 md:px-4 py-2 mb-6 mt-16 md:mt-0 animate-fade-in mx-2 md:mx-0">
             <span className="text-primary-foreground/90 text-sm md:text-sm font-bold whitespace-nowrap">
               economica • personalizzabile • veloce da installare
             </span>
@@ -31,7 +31,7 @@ const Hero = () => {
           {/* Main Headline */}
           <h1 className="font-display font-bold text-primary-foreground mb-4 animate-fade-in-up opacity-0 animation-delay-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             <span className="block text-4xl md:text-6xl lg:text-7xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">RECINZIONI DA GIARDINO</span>
-            <span className="block text-2xl md:text-4xl lg:text-5xl text-primary-foreground/90 mt-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">AL MIGLIOR PREZZO DEL MERCATO</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl text-primary-foreground/90 mt-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">AL MIGLIOR PREZZO DEL MERCATO</span>
           </h1>
 
           <p className="inline-block font-display text-xl md:text-3xl text-primary-foreground font-semibold mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-6 py-3 rounded-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
@@ -39,7 +39,7 @@ const Hero = () => {
           </p>
 
           {/* Features List */}
-          <ul className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 animate-fade-in-up opacity-0 animation-delay-300">
+          <ul className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 animate-fade-in-up opacity-0 animation-delay-300 md:flex-nowrap">
             {[
               "Facile da installare",
               "Design moderno ed esclusivo",
@@ -48,7 +48,7 @@ const Hero = () => {
             ].map((feature, index) => (
               <li key={index} className="flex items-center gap-2 bg-foreground/30 backdrop-blur-sm px-4 py-2 rounded-full">
                 <span className="w-2 h-2 bg-accent rounded-full" />
-                <span className="font-bold text-primary-foreground text-sm md:text-base">{feature}</span>
+                <span className="font-bold text-primary-foreground text-sm md:text-base whitespace-nowrap">{feature}</span>
               </li>
             ))}
           </ul>

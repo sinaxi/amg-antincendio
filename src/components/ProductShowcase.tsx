@@ -24,25 +24,25 @@ const ProductShowcase = () => {
             <img 
               src={fence1} 
               alt="Recinzione modulare WPC marrone per giardino privato - installazione fai da te" 
-              className="rounded-xl shadow-lg w-full h-40 md:h-64 object-cover card-elevated"
+              className="rounded-xl shadow-lg w-full h-40 md:h-80 object-cover card-elevated"
               loading="lazy"
             />
             <img 
               src={fence2} 
               alt="Pannelli fence WPC design moderno per staccionata personalizzabile" 
-              className="rounded-xl shadow-lg w-full h-40 md:h-64 object-cover card-elevated"
+              className="rounded-xl shadow-lg w-full h-40 md:h-80 object-cover card-elevated"
               loading="lazy"
             />
             <img 
               src={fence3} 
               alt="Fence WPC per privacy giardino e divisorio esterno casa" 
-              className="rounded-xl shadow-lg w-full h-40 md:h-64 object-cover card-elevated"
+              className="rounded-xl shadow-lg w-full h-40 md:h-80 object-cover card-elevated"
               loading="lazy"
             />
             <img 
               src={fence4} 
               alt="Recinzione modulare WPC resistente per delimitazione spazi esterni" 
-              className="rounded-xl shadow-lg w-full h-40 md:h-64 object-cover card-elevated"
+              className="rounded-xl shadow-lg w-full h-40 md:h-80 object-cover card-elevated"
               loading="lazy"
             />
           </figure>
