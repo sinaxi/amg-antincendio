@@ -51,12 +51,12 @@ const ContactForm = () => {
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
-            <header className="text-primary-foreground">
+            <header className="text-primary-foreground text-center lg:text-left">
               <span className="inline-block text-primary-foreground/80 font-semibold mb-4 uppercase tracking-wider text-sm">
                 Preventivo Recinzioni Gratuito
               </span>
               <h2 id="contact-heading" className="font-display text-3xl md:text-4xl font-bold mb-6">
-                Richiedi Preventivo per Recinzioni Giardino
+                Richiedi Preventivo per Recinzioni da Giardino
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
                 Pronto a trasformare il tuo spazio esterno con fence e staccionate personalizzabili? Contattaci per ricevere un preventivo gratuito per recinzioni modulari. 
