@@ -71,7 +71,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <div className="text-sm text-primary-foreground/70">Telefono</div>
-                    <div className="font-semibold">+39 035 123 4567</div>
+                    <div className="font-semibold">+39 035 827107</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
