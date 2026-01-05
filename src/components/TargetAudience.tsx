@@ -25,9 +25,9 @@ const TargetAudience = () => {
             </p>
             <Button 
               variant="outline"
-              size="lg"
+              size="default"
               onClick={scrollToContact}
-              className="group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors"
+              className="group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors px-4"
               aria-label="Diventa rivenditore o installatore di recinzioni"
             >
               Diventa Rivenditore o Installatore

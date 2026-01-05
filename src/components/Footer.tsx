@@ -9,7 +9,8 @@ const Footer = () => {
           <div className="lg:max-w-sm">
             <h3 className="font-display text-2xl font-bold mb-4">RecinzioniPro</h3>
             <p className="text-background/70 leading-relaxed">
-              DAGEM OUTDOOR SOLUTIONS - Da oltre vent'anni nel settore delle soluzioni per l'outdoor. 
+              <strong className="text-background">DAGEM OUTDOOR SOLUTIONS</strong><br />
+              Da oltre vent'anni nel settore delle soluzioni per l'outdoor. 
               Specializzati nella commercializzazione di pavimenti e recinzioni in WPC.
             </p>
           </div>

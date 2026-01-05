@@ -15,7 +15,7 @@ const StickyFooter = () => {
             onClick={scrollToContact}
             className="rounded-full font-bold text-base px-8"
           >
-            RICHIEDI PREVENTIVO
+            RICHIEDI UN PREVENTIVO
           </Button>
         </div>
       </div>

@@ -15,9 +15,12 @@ const ProductShowcase = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Image Grid */}
           <div>
-            <span className="inline-block text-primary font-bold mb-6 uppercase tracking-wider text-base">
-              Soluzioni Personalizzabili e Modulari
+            <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
+              Recinzioni Fence Modulari
             </span>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
+              Soluzioni Personalizzabili e Modulari
+            </h2>
             <figure className="grid grid-cols-2 gap-4">
               <img 
                 src={fence1} 
