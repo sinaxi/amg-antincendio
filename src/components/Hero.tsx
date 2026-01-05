@@ -29,12 +29,12 @@ const Hero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-display font-bold text-primary-foreground mb-4 animate-fade-in-up opacity-0 animation-delay-100">
-            <span className="block text-4xl md:text-6xl lg:text-7xl">RECINZIONI DA GIARDINO</span>
-            <span className="block text-2xl md:text-4xl lg:text-5xl text-primary-foreground/90 mt-2">AL MIGLIOR PREZZO DEL MERCATO</span>
+          <h1 className="font-display font-bold text-primary-foreground mb-4 animate-fade-in-up opacity-0 animation-delay-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <span className="block text-4xl md:text-6xl lg:text-7xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">RECINZIONI DA GIARDINO</span>
+            <span className="block text-2xl md:text-4xl lg:text-5xl text-primary-foreground/90 mt-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">AL MIGLIOR PREZZO DEL MERCATO</span>
           </h1>
 
-          <p className="inline-block font-display text-xl md:text-3xl text-primary-foreground font-semibold mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-6 py-3 rounded-full">
+          <p className="inline-block font-display text-xl md:text-3xl text-primary-foreground font-semibold mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-6 py-3 rounded-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             Modulari e Personalizzabili
           </p>
 

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { Send, Phone, MapPin } from "lucide-react";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -72,15 +72,6 @@ const ContactForm = () => {
                   <div>
                     <div className="text-sm text-primary-foreground/70">Telefono</div>
                     <div className="font-semibold">+39 035 123 4567</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary-foreground/20 rounded-full flex items-center justify-center">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-primary-foreground/70">Email</div>
-                    <div className="font-semibold">info@recintazioni.pro</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

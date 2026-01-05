@@ -7,7 +7,7 @@ const TargetAudience = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {/* For Professionals */}
