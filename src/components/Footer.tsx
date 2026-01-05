@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12 mb-12 text-center lg:text-left">
           {/* Brand */}
           <div className="lg:max-w-sm">
-            <h3 className="font-display text-2xl font-bold mb-4">RecinzioniPro</h3>
+            <h3 className="font-display text-2xl mb-4"><span className="font-bold">Recinzioni</span><span className="font-light">Pro</span></h3>
             <p className="text-background/70 leading-relaxed">
               <strong className="text-background">DAGEM OUTDOOR SOLUTIONS</strong><br />
               Da oltre vent'anni nel settore delle soluzioni per l'outdoor. 
@@ -51,7 +51,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-background/20 pt-8 pb-20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/60 text-xs md:text-sm whitespace-nowrap">
-            © {currentYear} RecinzioniPro - DAGEM S.r.l. Tutti i diritti riservati.
+            © {currentYear} <span className="font-semibold">Recinzioni</span><span className="font-light">Pro</span> - DAGEM S.r.l. Tutti i diritti riservati.
           </p>
           <div className="flex gap-2 md:gap-6 text-xs md:text-sm whitespace-nowrap">
             <a href="#" className="text-background/60 hover:text-background transition-colors">

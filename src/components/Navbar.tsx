@@ -54,13 +54,13 @@ const Navbar = () => {
             {/* Logo */}
             <a 
               href="#" 
-              className="font-display text-lg font-bold text-primary-foreground hover:text-primary-foreground/80 transition-colors"
+              className="font-display text-lg text-primary-foreground hover:text-primary-foreground/80 transition-colors"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              RecinzioniPro
+              <span className="font-bold">Recinzioni</span><span className="font-light">Pro</span>
             </a>
 
             {/* Desktop Navigation */}
