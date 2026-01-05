@@ -96,18 +96,6 @@ const FAQ = () => {
             ))}
           </Accordion>
 
-          {/* CTA */}
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
-              Non hai trovato la risposta che cercavi?
-            </p>
-            <a 
-              href="tel:+39035827107" 
-              className="text-primary font-semibold hover:underline"
-            >
-              Chiamaci al +39 035 827107
-            </a>
-          </div>
         </div>
       </div>
     </section>
