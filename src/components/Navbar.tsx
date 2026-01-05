@@ -105,7 +105,7 @@ const Navbar = () => {
       >
         {/* Backdrop */}
         <div 
-          className="absolute inset-0 bg-primary backdrop-blur-lg"
+          className="absolute inset-0 bg-foreground/90 backdrop-blur-lg"
           onClick={() => setIsOpen(false)}
         />
         
