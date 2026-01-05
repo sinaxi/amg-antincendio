@@ -27,7 +27,7 @@ const TargetAudience = () => {
               variant="outline"
               size="lg"
               onClick={scrollToContact}
-              className="group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors"
+              className="px-4 group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors"
               aria-label="Diventa rivenditore o installatore di recinzioni"
             >
               Diventa Rivenditore o Installatore
@@ -51,7 +51,7 @@ const TargetAudience = () => {
               variant="outline"
               size="lg"
               onClick={scrollToContact}
-              className="group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors"
+              className="px-4 group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors"
               aria-label="Richiedi catalogo recinzioni e preventivo gratuito"
             >
               Richiedi il Catalogo
