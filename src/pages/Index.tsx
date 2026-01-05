@@ -7,6 +7,7 @@ import Gallery from "@/components/Gallery";
 import UseCases from "@/components/UseCases";
 import WhyWPC from "@/components/WhyWPC";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import StickyFooter from "@/components/StickyFooter";
@@ -23,6 +24,7 @@ const Index = () => {
       <UseCases />
       <WhyWPC />
       <Testimonials />
+      <FAQ />
       <ContactForm />
       <Footer />
       <StickyFooter />
