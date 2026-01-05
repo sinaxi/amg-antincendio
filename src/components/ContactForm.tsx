@@ -64,12 +64,12 @@ const ContactForm = () => {
               </p>
 
               {/* Contact Info */}
-              <div className="space-y-4">
+              <div className="space-y-4 flex flex-col items-center lg:items-start">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary-foreground/20 rounded-full flex items-center justify-center">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <div className="text-sm text-primary-foreground/70">Telefono</div>
                     <div className="font-semibold">+39 035 827107</div>
                   </div>
@@ -78,7 +78,7 @@ const ContactForm = () => {
                   <div className="w-12 h-12 bg-primary-foreground/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <div className="text-sm text-primary-foreground/70">Sede</div>
                     <div className="font-semibold whitespace-nowrap text-sm md:text-base">Via Boschetta, 15 - Costa Volpino (BG)</div>
                   </div>
