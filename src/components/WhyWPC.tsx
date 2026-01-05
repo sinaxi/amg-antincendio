@@ -13,7 +13,7 @@ const advantages = [
 
 const WhyWPC = () => {
   return (
-    <section id="wpc" className="py-20 md:py-28 bg-muted">
+    <section id="wpc" className="pt-28 md:pt-36 pb-20 md:pb-28 bg-muted">
       <div className="container mx-auto px-4">
         <article className="max-w-4xl mx-auto text-center">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
