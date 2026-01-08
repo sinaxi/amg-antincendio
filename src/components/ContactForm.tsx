@@ -15,6 +15,7 @@ const ContactForm = () => {
     telefono: "",
     provincia: "",
     tipo: "privato",
+    lunghezza: "",
     messaggio: ""
   });
 
@@ -47,6 +48,7 @@ const ContactForm = () => {
           phone: formData.telefono,
           province: formData.provincia,
           userType: formData.tipo === "privato" ? "Privato" : "Rivenditore",
+          fenceLength: formData.tipo === "privato" ? formData.lunghezza : "",
           message: formData.messaggio,
           pageUrl: window.location.href,
           clientIp: clientIp,
@@ -66,6 +68,7 @@ const ContactForm = () => {
         telefono: "",
         provincia: "",
         tipo: "privato",
+        lunghezza: "",
         messaggio: ""
       });
     } catch (error: any) {
@@ -208,6 +211,23 @@ const ContactForm = () => {
                     </select>
                   </div>
                 </div>
+
+                {formData.tipo === "privato" && (
+                  <div>
+                    <label htmlFor="lunghezza" className="block text-sm font-medium text-foreground mb-2">
+                      Lunghezza indicativa recinzione
+                    </label>
+                    <Input
+                      id="lunghezza"
+                      name="lunghezza"
+                      type="text"
+                      value={formData.lunghezza}
+                      onChange={handleChange}
+                      placeholder="Es. 20 metri"
+                      className="bg-background"
+                    />
+                  </div>
+                )}
 
                 <div>
                   <label htmlFor="messaggio" className="block text-sm font-medium text-foreground mb-2">
