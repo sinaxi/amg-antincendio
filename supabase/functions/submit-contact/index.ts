@@ -37,10 +37,10 @@ const handler = async (req: Request): Promise<Response> => {
     const italyDate = now.toLocaleDateString("it-IT", { timeZone: "Europe/Rome" });
     const italyTime = now.toLocaleTimeString("it-IT", { timeZone: "Europe/Rome" });
 
-    // Prepare data for Google Sheets (columns A-K)
-    // A: Nome, B: Email, C: Telefono, D: Provincia, E: Tipologia, F: Messaggio, G: Data, H: Lunghezza, I: Ora, J: Page URL, K: IP
+    // Prepare data for Google Sheets (starting from column C)
+    // C: Nome e Cognome, D: Email, E: Telefono, F: Provincia, G: Tipologia, H: Messaggio, I: Data, J: Lunghezza, K: Ora, L: Page URL, M: IP
     const sheetData = {
-      Nome: formData.name,
+      "Nome e Cognome": formData.name,
       Email: formData.email,
       Telefono: formData.phone,
       Provincia: formData.province,
@@ -49,7 +49,7 @@ const handler = async (req: Request): Promise<Response> => {
       Data: italyDate,
       Lunghezza: formData.fenceLength || "",
       Ora: italyTime,
-      "Page URL": formData.pageUrl,
+      "Page URL": formData.pageUrl, // Full URL with query parameters
       IP: formData.clientIp,
     };
 
