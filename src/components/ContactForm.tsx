@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Phone, MapPin } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -22,27 +23,61 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const getClientIp = async (): Promise<string> => {
+    try {
+      const response = await fetch("https://api.ipify.org?format=json");
+      const data = await response.json();
+      return data.ip;
+    } catch {
+      return "unknown";
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const clientIp = await getClientIp();
+      
+      const { error } = await supabase.functions.invoke("submit-contact", {
+        body: {
+          name: formData.nome,
+          email: formData.email,
+          phone: formData.telefono,
+          province: formData.provincia,
+          userType: formData.tipo === "privato" ? "Privato" : "Rivenditore",
+          message: formData.messaggio,
+          pageUrl: window.location.href,
+          clientIp: clientIp,
+        },
+      });
 
-    toast({
-      title: "Richiesta Inviata!",
-      description: "Ti contatteremo al più presto per fornirti un preventivo personalizzato.",
-    });
+      if (error) throw error;
 
-    setFormData({
-      nome: "",
-      email: "",
-      telefono: "",
-      provincia: "",
-      tipo: "privato",
-      messaggio: ""
-    });
-    setIsSubmitting(false);
+      toast({
+        title: "Richiesta Inviata!",
+        description: "Ti contatteremo al più presto per fornirti un preventivo personalizzato.",
+      });
+
+      setFormData({
+        nome: "",
+        email: "",
+        telefono: "",
+        provincia: "",
+        tipo: "privato",
+        messaggio: ""
+      });
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Errore",
+        description: "Si è verificato un errore nell'invio. Riprova più tardi.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
