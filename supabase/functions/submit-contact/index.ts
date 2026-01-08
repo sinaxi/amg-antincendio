@@ -14,6 +14,7 @@ interface ContactFormData {
   phone: string;
   province: string;
   userType: string;
+  fenceLength: string;
   message: string;
   pageUrl: string;
   clientIp: string;
@@ -36,7 +37,8 @@ const handler = async (req: Request): Promise<Response> => {
     const italyDate = now.toLocaleDateString("it-IT", { timeZone: "Europe/Rome" });
     const italyTime = now.toLocaleTimeString("it-IT", { timeZone: "Europe/Rome" });
 
-    // Prepare data for Google Sheets
+    // Prepare data for Google Sheets (columns A-K)
+    // A: Nome, B: Email, C: Telefono, D: Provincia, E: Tipologia, F: Messaggio, G: Data, H: Lunghezza, I: Ora, J: Page URL, K: IP
     const sheetData = {
       Nome: formData.name,
       Email: formData.email,
@@ -45,6 +47,7 @@ const handler = async (req: Request): Promise<Response> => {
       Tipologia: formData.userType,
       Messaggio: formData.message,
       Data: italyDate,
+      Lunghezza: formData.fenceLength || "",
       Ora: italyTime,
       "Page URL": formData.pageUrl,
       IP: formData.clientIp,
@@ -67,6 +70,12 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     // Prepare email content
+    const fenceLengthRow = formData.fenceLength ? `
+        <tr>
+          <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Lunghezza Recinzione</td>
+          <td style="padding: 8px; border: 1px solid #ddd;">${formData.fenceLength}</td>
+        </tr>` : "";
+
     const emailHtml = `
       <h1>Nuovo Contatto da Recinzioni Pro - Landing Page</h1>
       <table style="border-collapse: collapse; width: 100%;">
@@ -89,7 +98,7 @@ const handler = async (req: Request): Promise<Response> => {
         <tr>
           <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Tipologia</td>
           <td style="padding: 8px; border: 1px solid #ddd;">${formData.userType}</td>
-        </tr>
+        </tr>${fenceLengthRow}
         <tr>
           <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Messaggio</td>
           <td style="padding: 8px; border: 1px solid #ddd;">${formData.message}</td>
