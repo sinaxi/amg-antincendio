@@ -59,10 +59,10 @@ const Benefits = () => {
         {/* Section Header */}
         <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Vantaggi Recinzioni WPC
+            Vantaggi recinzioni WPC
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Recinzioni e Fence in WPC: Qualità al Miglior Prezzo
+            Recinzioni e fence personalizzabili per ogni esigenza
           </h2>
           <p className="text-muted-foreground text-lg">
             Staccionate e pannelli modulari per giardino e casa, estremamente resistenti e disponibili in 3 colori per personalizzare i tuoi spazi esterni

@@ -5,6 +5,7 @@ import ProductShowcase from "@/components/ProductShowcase";
 import TargetAudience from "@/components/TargetAudience";
 import Gallery from "@/components/Gallery";
 import UseCases from "@/components/UseCases";
+import FeaturesSlider from "@/components/FeaturesSlider";
 import WhyWPC from "@/components/WhyWPC";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -23,6 +24,7 @@ const Index = () => {
       <TargetAudience />
       <Gallery />
       <UseCases />
+      <FeaturesSlider />
       <WhyWPC />
       <Testimonials />
       <FAQ />
