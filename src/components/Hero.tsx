@@ -15,15 +15,16 @@ const Hero = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       
-      {/* Overlay */}
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-foreground/40" />
       <div className="absolute inset-0 hero-overlay" />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-2 md:px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-1 md:gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-3 md:px-4 py-2 mb-6 mt-16 md:mt-0 animate-fade-in mx-2 md:mx-0">
-            <span className="text-primary-foreground/90 text-xs md:text-sm font-bold whitespace-nowrap">
+          <div className="inline-flex items-center gap-1 md:gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-2 md:px-4 py-2 mb-6 mt-20 md:mt-0 animate-fade-in">
+            <span className="text-primary-foreground/90 text-[10px] md:text-sm font-bold whitespace-nowrap tracking-tight md:tracking-normal">
               economica • personalizzabile • veloce da installare
             </span>
           </div>
@@ -31,7 +32,7 @@ const Hero = () => {
           {/* Main Headline */}
           <h1 className="font-display font-bold text-primary-foreground mb-4 animate-fade-in-up opacity-0 animation-delay-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             <span className="block text-4xl md:text-6xl lg:text-7xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">RECINZIONI DA GIARDINO</span>
-            <span className="block text-2xl md:text-3xl lg:text-4xl text-primary-foreground/90 mt-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">AL MIGLIOR PREZZO DEL MERCATO</span>
+            <span className="block text-lg md:text-3xl lg:text-4xl text-primary-foreground/90 mt-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] whitespace-nowrap">AL MIGLIOR PREZZO DEL MERCATO</span>
           </h1>
 
           <p className="inline-block font-display text-xl md:text-3xl text-primary-foreground font-semibold mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-6 py-3 rounded-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
@@ -74,7 +75,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 pt-8 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 mb-16 md:mb-0 pt-8 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
             <div className="text-center">
               <div className="text-2xl md:text-4xl font-bold text-primary-foreground whitespace-nowrap">4.94/5</div>
               <div className="text-primary-foreground/70 text-xs md:text-sm">Valutazione</div>
@@ -94,7 +95,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <button 
         onClick={() => document.getElementById("vantaggi")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors animate-float"
+        className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors animate-float"
       >
         <ChevronDown className="w-8 h-8" />
       </button>
