@@ -49,18 +49,16 @@ const ProductShowcase = () => {
         </div>
 
         {/* Bottom - Content */}
-        <article className="text-center">
+        <article className="text-center bg-secondary/50 rounded-3xl py-16 px-6 md:px-12 mt-8">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
             Design & qualità recinzioni
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
             Staccionate e recinzioni giardino dal design moderno
           </h2>
-          <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+          <p className="text-muted-foreground text-lg mb-8 leading-relaxed max-w-4xl mx-auto">
             Trasforma il tuo giardino con una recinzione modulare in WPC DAGEM di <strong className="text-foreground">RecinzioniPro</strong>. 
-            Crea uno spazio privato e protetto con fence personalizzabili, lontano dagli sguardi curiosi.
-          </p>
-          <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+            Crea uno spazio privato e protetto con fence personalizzabili, lontano dagli sguardi curiosi. 
             Recinzioni casa eleganti e destinate a durare in eterno, in grado di resistere a vento, sole e intemperie, 
             <strong className="text-foreground"> senza bisogno di manutenzione</strong>. Facile da installare, personalizzabile 
             e resistente, è la soluzione perfetta per aggiungere stile e privacy al tuo giardino.
