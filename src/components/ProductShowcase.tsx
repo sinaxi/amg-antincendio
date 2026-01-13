@@ -13,12 +13,12 @@ const ProductShowcase = () => {
     <section id="prodotti" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         {/* Top - Image Grid */}
-        <div className="mb-12">
+        <div className="mb-12 text-center">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Recinzioni Fence Modulari
+            Recinzioni fence modulari
           </span>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
-            Soluzioni Personalizzabili e Modulari
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
+            Soluzioni personalizzabili e modulari
           </h2>
           <figure className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <img 
@@ -49,12 +49,12 @@ const ProductShowcase = () => {
         </div>
 
         {/* Bottom - Content */}
-        <article className="text-center md:text-left">
+        <article className="text-center">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Design & Qualità Recinzioni
+            Design & qualità recinzioni
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Staccionate e Recinzioni Giardino dal Design Moderno
+            Staccionate e recinzioni giardino dal design moderno
           </h2>
           <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
             Trasforma il tuo giardino con una recinzione modulare in WPC DAGEM di <strong className="text-foreground">RecinzioniPro</strong>. 
@@ -67,26 +67,26 @@ const ProductShowcase = () => {
           </p>
 
           {/* Features */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="flex items-center gap-3 justify-center md:justify-start">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8 justify-items-center">
+            <div className="flex items-center gap-3 justify-center">
               <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                 <span className="text-primary text-lg">✓</span>
               </div>
               <span className="text-foreground font-medium">Modulare su misura</span>
             </div>
-            <div className="flex items-center gap-3 justify-center md:justify-start">
+            <div className="flex items-center gap-3 justify-center">
               <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                 <span className="text-primary text-lg">✓</span>
               </div>
               <span className="text-foreground font-medium">Personalizzabile</span>
             </div>
-            <div className="flex items-center gap-3 justify-center md:justify-start">
+            <div className="flex items-center gap-3 justify-center">
               <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                 <span className="text-primary text-lg">✓</span>
               </div>
               <span className="text-foreground font-medium">Privacy totale</span>
             </div>
-            <div className="flex items-center gap-3 justify-center md:justify-start">
+            <div className="flex items-center gap-3 justify-center">
               <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                 <span className="text-primary text-lg">✓</span>
               </div>
@@ -94,9 +94,11 @@ const ProductShowcase = () => {
             </div>
           </div>
 
-          <Button variant="hero" size="xl" onClick={scrollToContact} aria-label="Richiedi preventivo gratuito per recinzioni giardino">
-            Richiedi Preventivo Gratuito
-          </Button>
+          <div className="flex justify-center">
+            <Button variant="hero" size="xl" onClick={scrollToContact} aria-label="Richiedi preventivo gratuito per recinzioni giardino">
+              Richiedi Preventivo Gratuito
+            </Button>
+          </div>
         </article>
       </div>
     </section>

@@ -94,7 +94,7 @@ const ContactForm = () => {
                 Preventivo Recinzioni Gratuito
               </span>
               <h2 id="contact-heading" className="font-display text-3xl md:text-4xl font-bold mb-6">
-                Richiedi Preventivo per Recinzioni da Giardino
+                Richiedi preventivo per recinzioni da giardino
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
                 Pronto a trasformare il tuo spazio esterno con fence e staccionate personalizzabili? Contattaci per ricevere un preventivo gratuito per recinzioni modulari. 
@@ -102,23 +102,33 @@ const ContactForm = () => {
               </p>
 
               {/* Contact Info */}
-              <div className="space-y-4 flex flex-col items-center lg:items-start">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary-foreground/20 rounded-full flex items-center justify-center">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-sm text-primary-foreground/70">Telefono</div>
-                    <div className="font-semibold">+39 035 827107</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
+              <div className="space-y-6 flex flex-col items-center lg:items-start">
+                <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary-foreground/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-primary-foreground/70">Sede</div>
-                    <div className="font-semibold whitespace-nowrap text-sm md:text-base">Via Boschetta, 15 - Costa Volpino (BG)</div>
+                    <div className="text-sm text-primary-foreground/70 mb-1">Sede legale</div>
+                    <div className="font-semibold text-sm md:text-base">
+                      DAGEM S.R.L.<br />
+                      Via Boschetta, 15<br />
+                      24062 – Costa Volpino (BG)<br />
+                      P.IVA 04123980163
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary-foreground/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm text-primary-foreground/70 mb-1">Sede operativa</div>
+                    <div className="font-semibold text-sm md:text-base">
+                      Via Valle delle Fontane, 74<br />
+                      Località Pertegalli<br />
+                      24060 – Endine Gaiano (BG)<br />
+                      Tel. +39 035 827107
+                    </div>
                   </div>
                 </div>
               </div>

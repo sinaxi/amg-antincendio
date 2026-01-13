@@ -28,10 +28,10 @@ const Testimonials = () => {
         {/* Section Header */}
         <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Recensioni Recinzioni
+            Recensioni recinzioni
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Opinioni Clienti sulle Nostre Recinzioni
+            Opinioni clienti sulle nostre recinzioni
           </h2>
           <div className="flex items-center justify-center gap-2 mb-4" aria-label="Valutazione media 4.94 su 5 stelle">
             {[...Array(5)].map((_, i) => (

@@ -21,10 +21,10 @@ const Gallery = () => {
         {/* Section Header */}
         <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Galleria Recinzioni
+            Galleria recinzioni
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Lasciati Ispirare dalle Nostre Recinzioni
+            Lasciati ispirare dalle nostre recinzioni
           </h2>
           <p className="text-muted-foreground text-lg">
             Scopri le nostre realizzazioni di fence e staccionate per giardino e trova ispirazione per trasformare il tuo spazio esterno
