@@ -12,42 +12,42 @@ import {
 const benefits = [
   {
     icon: Wrench,
-    title: "Facile Installazione",
+    title: "Facile installazione",
     description: "Sistema modulare fai-da-te, installazione rapida senza bisogno di professionisti"
   },
   {
     icon: Palette,
-    title: "3 Colori Disponibili",
+    title: "3 colori disponibili",
     description: "Marrone, Smoke Grey e Verde per personalizzare il tuo spazio esterno"
   },
   {
     icon: Droplets,
-    title: "Resistente all'Umidità",
+    title: "Resistente all'umidità",
     description: "Il WPC resiste a pioggia e umidità senza deformarsi o deteriorarsi"
   },
   {
     icon: Sun,
-    title: "Resistente ai Raggi UV",
+    title: "Resistente ai raggi UV",
     description: "Colore stabile nel tempo, non sbiadisce con l'esposizione al sole"
   },
   {
     icon: Shield,
-    title: "Zero Manutenzione",
+    title: "Zero manutenzione",
     description: "Nessuna verniciatura richiesta, mantiene l'aspetto originale per anni"
   },
   {
     icon: ThermometerSun,
-    title: "Isolante Termico",
+    title: "Isolante termico",
     description: "Proprietà isolanti che proteggono dalle temperature estreme"
   },
   {
     icon: Volume2,
-    title: "Isolante Acustico",
+    title: "Isolante acustico",
     description: "Riduce i rumori esterni per creare un'oasi di tranquillità"
   },
   {
     icon: Bug,
-    title: "Resistente a Insetti",
+    title: "Resistente a insetti",
     description: "Immune a tarli, muffe e insetti a differenza del legno naturale"
   }
 ];

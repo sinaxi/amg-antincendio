@@ -49,7 +49,12 @@ const FeaturesSlider = () => {
   const duplicatedFeatures = [...features, ...features];
 
   return (
-    <section className="py-12 md:py-16 bg-muted overflow-hidden">
+    <section className="py-12 md:py-16 bg-secondary overflow-hidden">
+      <div className="container mx-auto px-4 mb-8">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground text-center">
+          I vantaggi del WPC
+        </h2>
+      </div>
       <div 
         ref={scrollRef}
         className="flex gap-6 overflow-x-hidden"
@@ -58,7 +63,7 @@ const FeaturesSlider = () => {
         {duplicatedFeatures.map((feature, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-48 md:w-56 bg-card border-2 border-primary/30 rounded-2xl p-6 flex flex-col items-center text-center"
+            className="flex-shrink-0 w-48 md:w-56 bg-white border-2 border-primary/30 rounded-2xl p-6 flex flex-col items-center text-center"
           >
             <img 
               src={feature.icon} 
