@@ -50,14 +50,14 @@ const FeaturesSlider = () => {
 
   return (
     <section className="py-12 md:py-16 bg-secondary overflow-hidden">
-      <div className="container mx-auto px-4 mb-8">
+      <div className="container mx-auto px-2 md:px-4 mb-8">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground text-center">
           I vantaggi del WPC
         </h2>
       </div>
       <div 
         ref={scrollRef}
-        className="flex gap-6 overflow-x-hidden"
+        className="flex gap-6 overflow-x-auto cursor-grab active:cursor-grabbing touch-pan-x"
         style={{ scrollBehavior: 'auto' }}
       >
         {duplicatedFeatures.map((feature, index) => (

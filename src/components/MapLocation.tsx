@@ -1,16 +1,16 @@
 const MapLocation = () => {
-  const address = "Via Boschetta, 15, Costa Volpino, BG, Italy";
+  const address = "Via Valle delle Fontane, 74, Endine Gaiano, BG, Italy";
   const encodedAddress = encodeURIComponent(address);
   
   return (
     <section className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2 md:px-4">
         <div className="text-center mb-8">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Dove Siamo
+            Dove siamo
           </h2>
           <p className="text-muted-foreground">
-            Via Boschetta, 15 – Costa Volpino (BG)
+            Via Valle delle Fontane, 74 – Località Pertegalli – Endine Gaiano (BG)
           </p>
         </div>
         <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -22,7 +22,7 @@ const MapLocation = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="DAGEM Location"
+            title="DAGEM Location - Sede Operativa"
           />
         </div>
       </div>

@@ -3,7 +3,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-foreground text-background py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2 md:px-4">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12 mb-12 text-center lg:text-left">
           {/* Brand */}
           <div className="lg:max-w-sm">
@@ -15,35 +15,25 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Sede Legale */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Link Rapidi</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#vantaggi" className="text-background/70 hover:text-background transition-colors">
-                  Vantaggi
-                </a>
-              </li>
-              <li>
-                <a href="#prodotti" className="text-background/70 hover:text-background transition-colors">
-                  Prodotti
-                </a>
-              </li>
-              <li>
-                <a href="#contatti" className="text-background/70 hover:text-background transition-colors">
-                  Contattaci
-                </a>
-              </li>
-            </ul>
+            <h4 className="font-semibold text-lg md:text-lg mb-4">Sede legale</h4>
+            <address className="not-italic text-background/70 space-y-1 text-base md:text-sm">
+              <p className="font-semibold text-background">DAGEM S.R.L.</p>
+              <p>Via Boschetta, 15</p>
+              <p>24062 – Costa Volpino (BG)</p>
+              <p>P.IVA 04123980163</p>
+            </address>
           </div>
 
-          {/* Company Info */}
+          {/* Sede Operativa */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">DAGEM S.r.l.</h4>
-            <address className="not-italic text-background/70 space-y-2">
-              <p>Via Boschetta, 15</p>
-              <p>Costa Volpino (BG)</p>
-              <p>Partita IVA: 04123980163</p>
+            <h4 className="font-semibold text-lg md:text-lg mb-4">Sede operativa</h4>
+            <address className="not-italic text-background/70 space-y-1 text-base md:text-sm">
+              <p>Via Valle delle Fontane, 74</p>
+              <p>Località Pertegalli</p>
+              <p>24060 – Endine Gaiano (BG)</p>
+              <p>Tel. +39 035 827107</p>
             </address>
           </div>
         </div>
