@@ -1,19 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-fence.jpg";
-
 const Hero = () => {
   const scrollToContact = () => {
-    document.getElementById("contatti")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contatti")?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroImage})`
+    }} />
       
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-foreground/40" />
@@ -41,35 +39,20 @@ const Hero = () => {
 
           {/* Features List */}
           <ul className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 animate-fade-in-up opacity-0 animation-delay-300 md:flex-nowrap">
-            {[
-              "Facile da installare",
-              "Design moderno ed esclusivo",
-              "3 differenti colori",
-              "Nessuna manutenzione"
-            ].map((feature, index) => (
-              <li key={index} className="flex items-center gap-2 bg-foreground/30 backdrop-blur-sm px-4 py-2 rounded-full">
+            {["Facile da installare", "Design moderno ed esclusivo", "3 differenti colori", "Nessuna manutenzione"].map((feature, index) => <li key={index} className="flex items-center gap-2 bg-foreground/30 backdrop-blur-sm px-4 py-2 rounded-full">
                 <span className="w-2 h-2 bg-accent rounded-full" />
                 <span className="font-bold text-primary-foreground text-sm md:text-base whitespace-nowrap">{feature}</span>
-              </li>
-            ))}
+              </li>)}
           </ul>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 animation-delay-400">
-            <Button 
-              variant="hero" 
-              size="xl" 
-              onClick={scrollToContact}
-              className="btn-glow"
-            >
+            <Button variant="hero" size="xl" onClick={scrollToContact} className="btn-glow">
               Richiedi Preventivo Gratuito
             </Button>
-            <Button 
-              variant="heroOutline" 
-              size="xl"
-              onClick={() => document.getElementById("prodotti")?.scrollIntoView({ behavior: "smooth" })}
-              className="bg-primary-foreground/10 backdrop-blur-sm"
-            >
+            <Button variant="heroOutline" size="xl" onClick={() => document.getElementById("prodotti")?.scrollIntoView({
+            behavior: "smooth"
+          })} className="bg-primary-foreground/10 backdrop-blur-sm">
               Scopri i Prodotti
             </Button>
           </div>
@@ -93,14 +76,11 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <button 
-        onClick={() => document.getElementById("vantaggi")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors animate-float"
-      >
+      <button onClick={() => document.getElementById("vantaggi")?.scrollIntoView({
+      behavior: "smooth"
+    })} className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors animate-float">
         <ChevronDown className="w-8 h-8" />
       </button>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
