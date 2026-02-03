@@ -53,20 +53,37 @@ const handler = async (req: Request): Promise<Response> => {
       IP: formData.clientIp,
     };
 
+    // Send to Google Sheets via webhook (must not block email sending)
     console.log("Sending data to Google Sheets...");
-    
-    // Send to Google Sheets via webhook
-    if (googleSheetsWebhookUrl) {
-      const sheetsResponse = await fetch(googleSheetsWebhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(sheetData),
-      });
-      console.log("Google Sheets response status:", sheetsResponse.status);
+
+    const isValidUrl = (value: string) => {
+      try {
+        new URL(value);
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
+    if (googleSheetsWebhookUrl && isValidUrl(googleSheetsWebhookUrl)) {
+      try {
+        const sheetsResponse = await fetch(googleSheetsWebhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(sheetData),
+        });
+        console.log("Google Sheets response status:", sheetsResponse.status);
+        // Consume body to avoid leaks in Deno
+        await sheetsResponse.text();
+      } catch (sheetsError) {
+        console.error("Google Sheets webhook request failed (continuing):", sheetsError);
+      }
     } else {
-      console.error("Google Sheets webhook URL not configured");
+      console.error(
+        "Google Sheets webhook URL not configured or invalid (continuing). Check GOOGLE_SHEETS_WEBHOOK_URL.",
+      );
     }
 
     // Prepare email content
@@ -123,6 +140,10 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     console.log("Sending emails...");
+
+    if (!RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY not configured");
+    }
     
     // Send emails to all recipients using Resend API
     const emailResponse = await fetch("https://api.resend.com/emails", {
@@ -141,6 +162,10 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResult = await emailResponse.json();
     console.log("Email sent successfully:", emailResult);
+
+    if (!emailResponse.ok) {
+      throw new Error(`Resend error: ${JSON.stringify(emailResult)}`);
+    }
 
     return new Response(
       JSON.stringify({ success: true, message: "Form submitted successfully" }),
