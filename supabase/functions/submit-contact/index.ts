@@ -132,7 +132,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Recinzioni Pro <onboarding@resend.dev>",
+        from: "Recinzioni Pro <noreply@richiestainfo.com>",
         to: ["leads@sinaxi.it", "lisa.micheli@megtrading.it", "andrea@megtrading.it"],
         subject: "Recinzioni Pro - Landing Page",
         html: emailHtml,
