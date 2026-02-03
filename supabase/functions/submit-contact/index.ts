@@ -70,7 +70,7 @@ const handler = async (req: Request): Promise<Response> => {
         const sheetsResponse = await fetch(googleSheetsWebhookUrl, {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "text/plain;charset=utf-8", // Use text/plain to avoid CORS preflight
           },
           body: JSON.stringify(sheetData),
         });
