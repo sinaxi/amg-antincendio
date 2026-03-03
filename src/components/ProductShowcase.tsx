@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import fence1 from "@/assets/fence-gallery-1.webp";
-import fence2 from "@/assets/fence-gallery-2.webp";
-import fence3 from "@/assets/fence-gallery-3.webp";
-import fence4 from "@/assets/fence-gallery-4.webp";
+import fence1 from "@/assets/gallery-1.jpg";
+import fence2 from "@/assets/gallery-2.jpg";
+import fence3 from "@/assets/gallery-3.jpg";
+import fence4 from "@/assets/gallery-4.jpg";
 
 const ProductShowcase = () => {
   const scrollToContact = () => {

@@ -6,12 +6,12 @@ import gallery5 from "@/assets/gallery-5.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
 
 const images = [
-  { src: gallery1, alt: "Recinzione giardino modulare WPC marrone con design moderno per privacy esterna" },
-  { src: gallery2, alt: "Pannelli fence fai da te per staccionata personalizzabile giardino" },
-  { src: gallery3, alt: "Staccionate giardino WPC prezzi competitivi installazione rapida" },
-  { src: gallery4, alt: "Recinzioni casa design esclusivo per delimitazione spazi esterni" },
-  { src: gallery5, alt: "Pannelli recinzione WPC alta qualità resistenti alle intemperie" },
-  { src: gallery6, alt: "Soluzione modulare fence per divisione giardino e aree private" },
+  { src: gallery1, alt: "Recinzione WPC grigia con giardino e casa toscana sullo sfondo" },
+  { src: gallery2, alt: "Recinzione WPC grigia lungo giardino con paesaggio collinare toscano" },
+  { src: gallery3, alt: "Recinzione WPC a doghe grigie su strada residenziale italiana" },
+  { src: gallery4, alt: "Recinzione WPC effetto legno naturale con casale in pietra" },
+  { src: gallery5, alt: "Recinzione WPC antracite su abitazione con piante e vasi in terracotta" },
+  { src: gallery6, alt: "Recinzione WPC effetto legno con giardino fiorito e casale rustico" },
 ];
 
 const Gallery = () => {
