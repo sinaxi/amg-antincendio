@@ -4,6 +4,8 @@ import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
+import gallery7 from "@/assets/gallery-7.jpg";
+import gallery8 from "@/assets/gallery-8.jpg";
 
 const images = [
   { src: gallery1, alt: "Recinzione WPC grigia con giardino e casa toscana sullo sfondo" },
@@ -12,6 +14,8 @@ const images = [
   { src: gallery4, alt: "Recinzione WPC effetto legno naturale con casale in pietra" },
   { src: gallery5, alt: "Recinzione WPC antracite su abitazione con piante e vasi in terracotta" },
   { src: gallery6, alt: "Recinzione WPC effetto legno con giardino fiorito e casale rustico" },
+  { src: gallery7, alt: "Recinzione WPC marrone lungo viale con casale toscano e cipressi" },
+  { src: gallery8, alt: "Recinzione WPC effetto legno scuro in cortile mediterraneo con cancello in ferro battuto" },
 ];
 
 const Gallery = () => {
@@ -31,8 +35,8 @@ const Gallery = () => {
           </p>
         </header>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        {/* Gallery Grid - 2 cols mobile, 4 cols desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {images.map((image, index) => (
             <div 
               key={index}
