@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-2 md:px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-1 md:gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-2 md:px-4 py-2 mb-6 mt-20 md:mt-0 animate-fade-in">
+          <div className="inline-flex items-center gap-1 md:gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-2 md:px-4 py-2 mb-6 mt-28 md:mt-8 animate-fade-in">
             <span className="text-primary-foreground/90 text-[10px] md:text-sm font-bold whitespace-nowrap tracking-tight md:tracking-normal">
               economica • personalizzabile • veloce da installare
             </span>
