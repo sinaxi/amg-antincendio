@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
-import fence1 from "@/assets/gallery-1.jpg";
-import fence2 from "@/assets/gallery-2.jpg";
-import fence3 from "@/assets/gallery-3.jpg";
-import fence4 from "@/assets/gallery-4.jpg";
+import showcase1 from "@/assets/showcase-1.jpg";
+import showcase2 from "@/assets/showcase-2.jpg";
+import showcase3 from "@/assets/showcase-3.jpg";
+import showcase4 from "@/assets/showcase-4.jpg";
+
+const showcaseImages = [
+  { src: showcase1, alt: "Recinzione WPC grigia lungo giardino residenziale con prato e oleandri" },
+  { src: showcase2, alt: "Recinzione WPC marrone in giardino toscano con ulivi e vigneto" },
+  { src: showcase3, alt: "Recinzione WPC grigia con casa toscana, lavanda e ulivi" },
+  { src: showcase4, alt: "Recinzione WPC effetto legno naturale lungo viale con cipressi" },
+];
 
 const ProductShowcase = () => {
   const scrollToContact = () => {
@@ -20,32 +27,18 @@ const ProductShowcase = () => {
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
             Soluzioni personalizzabili e modulari
           </h2>
-          <figure className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <img 
-              src={fence1} 
-              alt="Recinzione modulare WPC marrone per giardino privato - installazione fai da te" 
-              className="rounded-xl shadow-lg w-full h-40 md:h-80 object-cover card-elevated"
-              loading="lazy"
-            />
-            <img 
-              src={fence2} 
-              alt="Pannelli fence WPC design moderno per staccionata personalizzabile" 
-              className="rounded-xl shadow-lg w-full h-40 md:h-80 object-cover card-elevated"
-              loading="lazy"
-            />
-            <img 
-              src={fence3} 
-              alt="Fence WPC per privacy giardino e divisorio esterno casa" 
-              className="rounded-xl shadow-lg w-full h-40 md:h-80 object-cover card-elevated"
-              loading="lazy"
-            />
-            <img 
-              src={fence4} 
-              alt="Recinzione modulare WPC resistente per delimitazione spazi esterni" 
-              className="rounded-xl shadow-lg w-full h-40 md:h-80 object-cover card-elevated"
-              loading="lazy"
-            />
-          </figure>
+          {/* Desktop: 4 col grid / Mobile: horizontal scroll */}
+          <div className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
+            {showcaseImages.map((image, index) => (
+              <img
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                className="rounded-xl shadow-lg w-[75vw] min-w-[75vw] md:w-full md:min-w-0 h-56 md:h-80 object-cover card-elevated snap-center"
+                loading="lazy"
+              />
+            ))}
+          </div>
         </div>
 
         {/* Bottom - Content */}
