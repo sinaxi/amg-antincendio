@@ -35,7 +35,7 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="inline-block font-display text-xl md:text-2xl lg:text-[1.6875rem] text-primary-foreground font-medium tracking-tight mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-6 py-3 rounded-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+          <p className="block w-full max-w-xl mx-auto font-display text-base sm:text-lg md:text-2xl lg:text-[1.6875rem] text-primary-foreground font-medium tracking-tight mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-4 sm:px-6 py-3 rounded-2xl md:rounded-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] text-balance leading-snug">
             Progetti su misura, conformi alle normative vigenti
           </p>
 
