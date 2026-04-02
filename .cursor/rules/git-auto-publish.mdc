@@ -5,9 +5,13 @@ alwaysApply: true
 
 # Pubblicazione Git automatica (AMG Antincendio)
 
+**Repository remoto:** `origin` deve puntare a  
+`https://github.com/sinaxi/amg-antincendio.git`  
+(branch principale: `main`). Dopo ogni commit esegui `git push origin main` (o il branch attivo).
+
 Quando completi un intervento che modifica file nel repository (codice, asset, config):
 
-1. Esegui `git status` e includi in commit solo i file pertinenti al task (evita di committare roba non richiesta).
+1. Esegui `git status` e includi in commit solo i file pertinenti al task (evita di committare roba non richiesta; **mai** `.env` o segreti).
 2. `git add` sui file coinvolti.
 3. `git commit -m "..."` con messaggio chiaro in italiano o inglese (cosa è cambiato e perché, in una riga o breve frase).
 4. `git push origin` sul branch corrente (di solito `main`).

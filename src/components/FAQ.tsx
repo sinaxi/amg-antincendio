@@ -7,36 +7,36 @@ import {
 
 const faqItems = [
   {
-    question: "Cos'è il WPC e perché è migliore del legno tradizionale?",
-    answer: "Il WPC (Wood Plastic Composite) è un materiale innovativo composto da fibre di legno e polimeri. Rispetto al legno tradizionale, non richiede manutenzione, non marcisce, non viene attaccato da insetti e mantiene il suo aspetto nel tempo senza necessità di verniciatura."
+    question: "Quali servizi antincendio offre AMG Sistemi?",
+    answer: "Offriamo impianti di rilevazione incendi (fumo, calore, centrali avanzate, rilevatori ottici, termici e multicriterio), sistemi di allarme acustico e visivo e integrazione con altri sistemi di sicurezza. Inoltre estintori e sistemi di spegnimento (schiuma, polvere, CO2, gas inerti, rete idrica), manutenzione programmata con reportistica, porte tagliafuoco, uscite di sicurezza, porte industriali, porte rapide e tende tagliafuoco con posa, riparazione e assistenza."
   },
   {
-    question: "Quanto dura una recinzione in WPC?",
-    answer: "Le nostre recinzioni in WPC hanno una durata media di 25-30 anni senza necessità di manutenzione significativa. Sono resistenti agli agenti atmosferici, ai raggi UV e non si deformano con il tempo."
+    question: "Siete in regola con le normative vigenti?",
+    answer: "Sì. Lavoriamo nel rispetto delle normative di sicurezza con aggiornamento costante agli standard, controlli periodici, revisione e collaudo degli impianti, sostituzione di componenti usurati e aggiornamento tecnologico dove necessario."
   },
   {
-    question: "Posso installare la recinzione da solo?",
-    answer: "Assolutamente sì! Le nostre recinzioni modulari sono progettate per un'installazione fai-da-te semplice e veloce. Forniamo istruzioni dettagliate e supporto telefonico. In media, un pannello si installa in 15-20 minuti."
+    question: "Offrite assistenza fuori orario?",
+    answer: "Forniamo un servizio di assistenza tecnica h24 per garantire interventi tempestivi quando necessario, come indicato nella nostra offerta di assistenza continua."
   },
   {
-    question: "Quali colori sono disponibili?",
-    answer: "Offriamo 3 colorazioni eleganti: marrone naturale, antracite e grigio chiaro. Tutti i colori sono resistenti allo sbiadimento grazie al trattamento anti-UV integrato nel materiale."
+    question: "Cosa include la manutenzione programmata?",
+    answer: "Controlli periodici conformi alla normativa, revisione e collaudo degli impianti, sostituzione componenti usurati, aggiornamento tecnologico dei sistemi e reportistica dettagliata degli interventi effettuati."
   },
   {
-    question: "Come si pulisce una recinzione WPC?",
-    answer: "La pulizia è semplicissima: basta acqua e sapone neutro. Non servono trattamenti speciali, vernici o impregnanti. Una pulizia occasionale è sufficiente per mantenere l'aspetto come nuovo."
+    question: "Lavorate solo con grandi aziende?",
+    answer: "Collaboriamo con strutture di ogni dimensione: industria e manifatturiero, uffici e centri direzionali, ricettività e commercio, sanità, scuole e data center. Offriamo anche consulenza e preventivi a privati e condomini."
   },
   {
-    question: "Offrite consegna e montaggio?",
-    answer: "Sì, effettuiamo consegne in tutta Italia. Per quanto riguarda il montaggio, offriamo sia l'opzione fai-da-te con kit completo sia il servizio di installazione professionale tramite i nostri partner certificati nella tua zona."
+    question: "Come funziona la consulenza gratuita?",
+    answer: "Siamo disponibili per una consulenza gratuita per valutare le esigenze di protezione antincendio. Su richiesta organizziamo sopralluogo e preventivo personalizzato per la vostra attività."
   },
   {
-    question: "Qual è la garanzia sui vostri prodotti?",
-    answer: "Tutti i nostri prodotti sono coperti da garanzia di 10 anni contro difetti di fabbricazione e deterioramento del materiale. La garanzia copre anche lo sbiadimento del colore oltre i limiti normali."
+    question: "Fornite solo i materiali o anche installazione?",
+    answer: "Ci occupiamo di posa e installazione, oltre a riparazione e manutenzione, per un servizio completo sulle soluzioni antincendio e sulla chiusura tagliafuoco."
   },
   {
     question: "Come richiedo un preventivo?",
-    answer: "Puoi richiedere un preventivo gratuito compilando il modulo in fondo alla pagina, chiamandoci al +39 035 827107 o inviando un'email. Ti risponderemo entro 24 ore con un preventivo dettagliato e personalizzato."
+    answer: "Compila il modulo contatti in questa pagina, chiama il 334 293 3220 o scrivi a info@amgsistemi.it. Ti ricontatteremo per fissare sopralluogo e inviarti un preventivo personalizzato."
   }
 ];
 
@@ -74,7 +74,7 @@ const FAQ = () => {
               Hai delle domande?
             </h2>
             <p className="text-muted-foreground text-lg">
-              Trova le risposte alle domande più comuni sulle nostre recinzioni in WPC
+              Trova le risposte alle domande più comuni sui sistemi antincendio e sui servizi AMG Sistemi
             </p>
           </div>
 

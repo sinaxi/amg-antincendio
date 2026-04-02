@@ -1,54 +1,25 @@
-import { 
-  Wrench, 
-  Palette, 
-  Droplets, 
-  Sun, 
-  Shield, 
-  ThermometerSun,
-  Volume2,
-  Bug
-} from "lucide-react";
+import { ShieldCheck, Scale, Headphones, Target } from "lucide-react";
 
 const benefits = [
   {
-    icon: Wrench,
-    title: "Facile installazione",
-    description: "Sistema modulare fai-da-te, installazione rapida senza bisogno di professionisti"
+    icon: ShieldCheck,
+    title: "Affidabilità",
+    description: "Sistemi testati e certificati, con anni di attività nel settore della sicurezza antincendio e centinaia di progetti completati con successo."
   },
   {
-    icon: Palette,
-    title: "3 colori disponibili",
-    description: "Marrone, Smoke Grey e Verde per personalizzare il tuo spazio esterno"
+    icon: Scale,
+    title: "Compliance normativa",
+    description: "Aggiornamento costante agli standard di sicurezza e continua innovazione dei sistemi, nel rispetto delle normative vigenti."
   },
   {
-    icon: Droplets,
-    title: "Resistente all'umidità",
-    description: "Il WPC resiste a pioggia e umidità senza deformarsi o deteriorarsi"
+    icon: Headphones,
+    title: "Assistenza continua",
+    description: "Servizio di assistenza tecnica disponibile h24 per garantire interventi tempestivi quando servono."
   },
   {
-    icon: Sun,
-    title: "Resistente ai raggi UV",
-    description: "Colore stabile nel tempo, non sbiadisce con l'esposizione al sole"
-  },
-  {
-    icon: Shield,
-    title: "Zero manutenzione",
-    description: "Nessuna verniciatura richiesta, mantiene l'aspetto originale per anni"
-  },
-  {
-    icon: ThermometerSun,
-    title: "Isolante termico",
-    description: "Proprietà isolanti che proteggono dalle temperature estreme"
-  },
-  {
-    icon: Volume2,
-    title: "Isolante acustico",
-    description: "Riduce i rumori esterni per creare un'oasi di tranquillità"
-  },
-  {
-    icon: Bug,
-    title: "Resistente a insetti",
-    description: "Immune a tarli, muffe e insetti a differenza del legno naturale"
+    icon: Target,
+    title: "Soluzioni personalizzate",
+    description: "Ogni progetto è studiato su misura in base alle specifiche esigenze del cliente e del contesto operativo."
   }
 ];
 
@@ -59,13 +30,13 @@ const Benefits = () => {
         {/* Section Header */}
         <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Vantaggi recinzioni WPC
+            La tua sicurezza è la nostra missione
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Recinzioni e fence personalizzabili per ogni esigenza
+            Protezione antincendio completa per persone e beni
           </h2>
           <p className="text-muted-foreground text-lg">
-            Staccionate e pannelli modulari per giardino e casa, estremamente resistenti e disponibili in 3 colori per personalizzare i tuoi spazi esterni
+            AMG Sistemi è un&apos;azienda leader nei sistemi antincendio: soluzioni all&apos;avanguardia, team di tecnici qualificati e servizi personalizzati conformi alle normative.
           </p>
         </header>
 

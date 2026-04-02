@@ -1,5 +1,5 @@
 const MapLocation = () => {
-  const address = "Via Valle delle Fontane, 74, Endine Gaiano, BG, Italy";
+  const address = "Via Manifattura V. Olcese, 58, Darfo Boario Terme, BS, Italy";
   const encodedAddress = encodeURIComponent(address);
   
   return (
@@ -10,7 +10,7 @@ const MapLocation = () => {
             Dove siamo
           </h2>
           <p className="text-muted-foreground">
-            Via Valle delle Fontane, 74 – Località Pertegalli – Endine Gaiano (BG)
+            Via Manifattura V. Olcese, 58 — 25047 Darfo Boario Terme (BS)
           </p>
         </div>
         <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -22,7 +22,7 @@ const MapLocation = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="DAGEM Location - Sede Operativa"
+            title="AMG sistemi S.r.l. — Sede Darfo Boario Terme"
           />
         </div>
       </div>

@@ -8,14 +8,14 @@ import gallery7 from "@/assets/gallery-7.jpg";
 import gallery8 from "@/assets/gallery-8.jpg";
 
 const images = [
-  { src: gallery1, alt: "Recinzione WPC grigia con giardino e casa toscana sullo sfondo" },
-  { src: gallery2, alt: "Recinzione WPC grigia lungo giardino con paesaggio collinare toscano" },
-  { src: gallery3, alt: "Recinzione WPC a doghe grigie su strada residenziale italiana" },
-  { src: gallery4, alt: "Recinzione WPC effetto legno naturale con casale in pietra" },
-  { src: gallery5, alt: "Recinzione WPC antracite su abitazione con piante e vasi in terracotta" },
-  { src: gallery6, alt: "Recinzione WPC effetto legno con giardino fiorito e casale rustico" },
-  { src: gallery7, alt: "Recinzione WPC marrone lungo viale con casale toscano e cipressi" },
-  { src: gallery8, alt: "Recinzione WPC effetto legno scuro in cortile mediterraneo con cancello in ferro battuto" },
+  { src: gallery1, alt: "Realizzazione impiantistica — contesto strutturale e supervisione" },
+  { src: gallery2, alt: "Progetto di sicurezza in ambiente residenziale e direzionale" },
+  { src: gallery3, alt: "Installazione componenti per percorsi e delimitazioni sicure" },
+  { src: gallery4, alt: "Intervento su struttura con esigenze di protezione e conformità" },
+  { src: gallery5, alt: "Dettaglio impianto e ambienti commerciali" },
+  { src: gallery6, alt: "Manutenzione e verifica in contesto edilizio" },
+  { src: gallery7, alt: "Cantiere e allestimento sistemi di sicurezza" },
+  { src: gallery8, alt: "Controllo accessi e sicurezza attiva sull'area" },
 ];
 
 const Gallery = () => {
@@ -25,13 +25,13 @@ const Gallery = () => {
         {/* Section Header */}
         <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-bold mb-4 uppercase tracking-wider text-base">
-            Galleria recinzioni
+            Le nostre realizzazioni
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Lasciati ispirare dalle nostre recinzioni
+            Esperienza sul tutto il territorio
           </h2>
           <p className="text-muted-foreground text-lg">
-            Scopri le nostre realizzazioni di fence e staccionate per giardino e trova ispirazione per trasformare il tuo spazio esterno
+            Alcuni ambiti in cui AMG Sistemi affianca clienti con impianti, manutenzione e assistenza continua — dalla rilevazione allo spegnimento, fino a porte tagliafuoco e uscite di sicurezza.
           </p>
         </header>
 

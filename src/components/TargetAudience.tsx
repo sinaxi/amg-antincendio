@@ -1,61 +1,86 @@
-import { Button } from "@/components/ui/button";
-import { Briefcase, User } from "lucide-react";
+import { Wrench, DoorOpen, Warehouse, Check } from "lucide-react";
+
+const programmazioneItems = [
+  "Controlli periodici secondo normativa",
+  "Revisione e collaudo degli impianti",
+  "Sostituzione componenti usurati",
+  "Aggiornamento tecnologico dei sistemi",
+  "Reportistica dettagliata degli interventi",
+];
+
+const industrialItems = [
+  "Posa e installazione, riparazione e manutenzione",
+  "Assistenza",
+];
 
 const TargetAudience = () => {
-  const scrollToContact = () => {
-    document.getElementById("contatti")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section className="py-12 md:py-16 bg-background">
+    <section className="pt-4 md:pt-6 pb-12 md:pb-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-          {/* For Professionals */}
-          <article className="bg-secondary p-6 md:p-10 rounded-2xl card-elevated group hover:bg-primary transition-all duration-500 overflow-hidden">
-            <div className="w-16 h-16 bg-primary/10 group-hover:bg-primary-foreground/20 rounded-full flex items-center justify-center mb-6 transition-colors">
-              <Briefcase className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+        <header className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-wide uppercase">
+            I Nostri servizi
+          </h2>
+        </header>
+
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {/* Manutenzione programmata */}
+          <article className="bg-secondary p-6 md:p-8 rounded-2xl card-elevated h-full flex flex-col">
+            <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <Wrench className="w-7 h-7 text-primary" aria-hidden />
             </div>
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary-foreground mb-4 transition-colors">
-              Rivenditori e Installatori Recinzioni
+            <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 leading-tight">
+              <span className="block">Manutenzione</span>
+              <span className="block">programmata</span>
             </h3>
-            <p className="text-muted-foreground group-hover:text-primary-foreground/80 mb-6 leading-relaxed transition-colors">
-              Unisciti alla nostra rete di professionisti e offri ai tuoi clienti recinzioni e fence di alta qualità per la privacy 
-              e la protezione del giardino. Con le nostre staccionate modulari, potrai soddisfare le richieste di una 
-              clientela sempre più attenta al design e alla durata.
-            </p>
-            <Button 
-              variant="outline"
-              size="lg"
-              onClick={scrollToContact}
-              className="px-4 group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors"
-              aria-label="Diventa rivenditore o installatore di recinzioni"
-            >
-              Diventa Rivenditore o Installatore
-            </Button>
+            <ul className="space-y-3 text-muted-foreground text-sm md:text-base leading-relaxed flex-1">
+              {programmazioneItems.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </article>
 
-          {/* For Private */}
-          <article className="bg-secondary p-6 md:p-10 rounded-2xl card-elevated group hover:bg-primary transition-all duration-500 overflow-hidden">
-            <div className="w-16 h-16 bg-primary/10 group-hover:bg-primary-foreground/20 rounded-full flex items-center justify-center mb-6 transition-colors">
-              <User className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+          {/* Porte tagliafuoco e uscite */}
+          <article className="bg-secondary p-6 md:p-8 rounded-2xl card-elevated h-full flex flex-col">
+            <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <DoorOpen className="w-7 h-7 text-primary" aria-hidden />
             </div>
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary-foreground mb-4 transition-colors">
-              Recinzioni Giardino per Privati
+            <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 leading-tight">
+              <span className="block">Porte tagliafuoco</span>
+              <span className="block">e uscite di sicurezza</span>
             </h3>
-            <p className="text-muted-foreground group-hover:text-primary-foreground/80 mb-6 leading-relaxed transition-colors">
-              Richiedi il nostro catalogo fence e staccionate e scopri i prezzi più bassi del mercato! Offriamo recinzioni di alta qualità 
-              destinate a durare nel tempo, con una vasta gamma di colori per ogni esigenza. Se cerchi soluzioni 
-              resistenti e stilose per il tuo giardino, contattaci!
+            <ul className="space-y-3 text-muted-foreground text-sm md:text-base leading-relaxed flex-1">
+              {programmazioneItems.map((item, i) => (
+                <li key={`porte-${i}`} className="flex gap-3">
+                  <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          {/* Porte industriali, rapide, tende */}
+          <article className="bg-secondary p-6 md:p-8 rounded-2xl card-elevated h-full flex flex-col">
+            <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <Warehouse className="w-7 h-7 text-primary" aria-hidden />
+            </div>
+            <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-2 leading-tight">
+              Porte industriali, Porte Rapide e Tende Tagliafuoco
+            </h3>
+            <p className="text-foreground font-semibold text-sm md:text-base mb-4">
+              Il servizio include:
             </p>
-            <Button 
-              variant="outline"
-              size="lg"
-              onClick={scrollToContact}
-              className="px-4 group-hover:border-primary-foreground group-hover:text-primary-foreground group-hover:hover:bg-primary-foreground/10 transition-colors"
-              aria-label="Richiedi catalogo recinzioni e preventivo gratuito"
-            >
-              Richiedi il Catalogo
-            </Button>
+            <ul className="space-y-3 text-muted-foreground text-sm md:text-base leading-relaxed flex-1">
+              {industrialItems.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </article>
         </div>
       </div>

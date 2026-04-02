@@ -3,15 +3,15 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItemsDesktop = [
-  { label: "Vantaggi", href: "#vantaggi" },
-  { label: "Prodotti", href: "#prodotti" },
-  { label: "Perché WPC", href: "#wpc" },
+  { label: "Servizi", href: "#vantaggi" },
+  { label: "Soluzioni", href: "#prodotti" },
+  { label: "Perché AMG", href: "#wpc" },
 ];
 
 const navItemsMobile = [
-  { label: "Vantaggi", href: "#vantaggi" },
-  { label: "Prodotti", href: "#prodotti" },
-  { label: "Perché WPC", href: "#wpc" },
+  { label: "Servizi", href: "#vantaggi" },
+  { label: "Soluzioni", href: "#prodotti" },
+  { label: "Perché AMG", href: "#wpc" },
   { label: "Galleria", href: "#galleria" },
   { label: "Contatti", href: "#contatti" },
 ];
@@ -49,7 +49,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${scrolled ? 'w-[95%] max-w-5xl' : 'w-[90%] max-w-4xl'}`}>
-        <div className="bg-primary/70 backdrop-blur-md rounded-full px-4 py-3 border border-primary-foreground/10 shadow-lg">
+        <div className="rounded-full px-4 py-3 border border-white/20 shadow-lg backdrop-blur-md bg-[#C81F25]/[0.93]">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a 
@@ -60,7 +60,7 @@ const Navbar = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <span className="font-bold">Recinzioni</span><span className="font-light">Pro</span>
+              <span className="font-bold">AMG</span><span className="font-light"> Sistemi</span>
             </a>
 
             {/* Desktop Navigation */}
@@ -133,7 +133,7 @@ const Navbar = () => {
               </button>
             ))}
             <Button
-              variant="secondary"
+              variant="default"
               size="xl"
               onClick={() => scrollToSection("#contatti")}
               className="mt-6 rounded-full font-semibold"

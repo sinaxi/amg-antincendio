@@ -14,12 +14,10 @@ const ContactForm = () => {
     email: "",
     telefono: "",
     provincia: "",
-    tipo: "privato",
-    lunghezza: "",
     messaggio: ""
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -47,8 +45,8 @@ const ContactForm = () => {
           email: formData.email,
           phone: formData.telefono,
           province: formData.provincia,
-          userType: formData.tipo === "privato" ? "Privato" : "Rivenditore",
-          fenceLength: formData.tipo === "privato" ? formData.lunghezza : "",
+          userType: "Non indicato",
+          fenceLength: "",
           message: formData.messaggio,
           pageUrl: window.location.href,
           clientIp: clientIp,
@@ -67,8 +65,6 @@ const ContactForm = () => {
         email: "",
         telefono: "",
         provincia: "",
-        tipo: "privato",
-        lunghezza: "",
         messaggio: ""
       });
     } catch (error: any) {
@@ -91,14 +87,14 @@ const ContactForm = () => {
             {/* Left Content */}
             <header className="text-primary-foreground text-center lg:text-left">
               <span className="inline-block text-primary-foreground/80 font-semibold mb-4 uppercase tracking-wider text-sm">
-                Preventivo Recinzioni Gratuito
+                Consulenza e preventivo gratuito
               </span>
               <h2 id="contact-heading" className="font-display text-3xl md:text-4xl font-bold mb-6">
-                Richiedi preventivo per recinzioni da giardino
+                Contattaci per le tue Soluzioni Antincendio Professionali
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-                Pronto a trasformare il tuo spazio esterno con fence e staccionate personalizzabili? Contattaci per ricevere un preventivo gratuito per recinzioni modulari. 
-                Ci basta conoscere la lunghezza dell'area ed eventuali tue esigenze specifiche.
+                Siamo pronti a offrirvi una consulenza gratuita per valutare le esigenze di protezione antincendio. 
+                Per un sopralluogo o un preventivo personalizzato sulla vostra attività, scriveteci o chiamateci: vi ricontatteremo al più presto.
               </p>
 
               {/* Contact Info */}
@@ -108,12 +104,13 @@ const ContactForm = () => {
                     <Factory className="w-5 h-5" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-primary-foreground/70 mb-1">Sede legale</div>
+                    <div className="text-sm text-primary-foreground/70 mb-1">AMG sistemi S.r.l.</div>
                     <div className="font-semibold text-sm md:text-base">
-                      DAGEM S.R.L.<br />
-                      Via Boschetta, 15<br />
-                      24062 – Costa Volpino (BG)<br />
-                      P.IVA 04123980163
+                      Via Manifattura V. Olcese, 58<br />
+                      25047 – Darfo Boario Terme (BS)<br />
+                      <a href="tel:+393342933220" className="underline underline-offset-2 hover:opacity-90">Tel. 334 293 3220</a><br />
+                      <a href="mailto:info@amgsistemi.it" className="underline underline-offset-2 hover:opacity-90">info@amgsistemi.it</a><br />
+                      <a href="https://www.amgsistemi.it" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-90">www.amgsistemi.it</a>
                     </div>
                   </div>
                 </div>
@@ -122,12 +119,10 @@ const ContactForm = () => {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-primary-foreground/70 mb-1">Sede operativa</div>
+                    <div className="text-sm text-primary-foreground/70 mb-1">Dove siamo</div>
                     <div className="font-semibold text-sm md:text-base">
-                      Via Valle delle Fontane, 74<br />
-                      Località Pertegalli<br />
-                      24060 – Endine Gaiano (BG)<br />
-                      Tel. +39 035 827107
+                      Darfo Boario Terme (BS)<br />
+                      Sopralluoghi su territorio regionale e nazionale su accordi
                     </div>
                   </div>
                 </div>
@@ -189,55 +184,21 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="provincia" className="block text-sm font-medium text-foreground mb-2">
-                      Provincia *
-                    </label>
-                    <Input
-                      id="provincia"
-                      name="provincia"
-                      type="text"
-                      required
-                      value={formData.provincia}
-                      onChange={handleChange}
-                      placeholder="Es. Milano"
-                      className="bg-background"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="tipo" className="block text-sm font-medium text-foreground mb-2">
-                      Sei Privato o Rivenditore?
-                    </label>
-                    <select
-                      id="tipo"
-                      name="tipo"
-                      value={formData.tipo}
-                      onChange={handleChange}
-                      className="w-full h-10 rounded-lg border border-input bg-background px-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    >
-                      <option value="privato">Sono un Privato</option>
-                      <option value="rivenditore">Sono un Rivenditore</option>
-                    </select>
-                  </div>
+                <div>
+                  <label htmlFor="provincia" className="block text-sm font-medium text-foreground mb-2">
+                    Provincia *
+                  </label>
+                  <Input
+                    id="provincia"
+                    name="provincia"
+                    type="text"
+                    required
+                    value={formData.provincia}
+                    onChange={handleChange}
+                    placeholder="Es. Milano"
+                    className="bg-background"
+                  />
                 </div>
-
-                {formData.tipo === "privato" && (
-                  <div>
-                    <label htmlFor="lunghezza" className="block text-sm font-medium text-foreground mb-2">
-                      Lunghezza indicativa recinzione
-                    </label>
-                    <Input
-                      id="lunghezza"
-                      name="lunghezza"
-                      type="text"
-                      value={formData.lunghezza}
-                      onChange={handleChange}
-                      placeholder="Es. 20 metri"
-                      className="bg-background"
-                    />
-                  </div>
-                )}
 
                 <div>
                   <label htmlFor="messaggio" className="block text-sm font-medium text-foreground mb-2">
@@ -268,8 +229,9 @@ const ContactForm = () => {
 
                 <Button 
                   type="submit" 
+                  variant="default"
                   size="xl" 
-                  className="w-full bg-brown-dark hover:bg-brown-dark/90 text-brown-dark-foreground"
+                  className="w-full"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

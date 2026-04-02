@@ -7,10 +7,10 @@ const StickyFooter = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40">
-      <div className="bg-primary/50 backdrop-blur-md border-t border-primary-foreground/10 py-3 px-4">
+      <div className="bg-zinc-200/94 backdrop-blur-md border-t border-zinc-400/55 py-3 px-4">
         <div className="container mx-auto flex justify-center">
           <Button
-            variant="secondary"
+            variant="default"
             size="lg"
             onClick={scrollToContact}
             className="rounded-full font-bold text-base px-8"

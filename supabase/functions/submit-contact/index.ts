@@ -89,12 +89,12 @@ const handler = async (req: Request): Promise<Response> => {
     // Prepare email content
     const fenceLengthRow = formData.fenceLength ? `
         <tr>
-          <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Lunghezza Recinzione</td>
+          <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Dettaglio richiesta</td>
           <td style="padding: 8px; border: 1px solid #ddd;">${formData.fenceLength}</td>
         </tr>` : "";
 
     const emailHtml = `
-      <h1>Nuovo Contatto da Recinzioni Pro - Landing Page</h1>
+      <h1>Nuovo contatto — AMG Sistemi (landing)</h1>
       <table style="border-collapse: collapse; width: 100%;">
         <tr>
           <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Nome</td>
@@ -153,9 +153,9 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Recinzioni Pro <noreply@richiestainfo.com>",
+        from: "AMG Sistemi <noreply@richiestainfo.com>",
         to: ["leads@sinaxi.it", "lisa.micheli@megtrading.it", "andrea@megtrading.it"],
-        subject: "Recinzioni Pro - Landing Page",
+        subject: "AMG Sistemi — Nuovo contatto dalla landing",
         html: emailHtml,
       }),
     });
