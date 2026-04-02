@@ -1,21 +1,28 @@
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
-import gallery7 from "@/assets/gallery-7.jpg";
-import gallery8 from "@/assets/gallery-8.jpg";
-
 const images = [
-  { src: gallery1, alt: "Realizzazione impiantistica — contesto strutturale e supervisione" },
-  { src: gallery2, alt: "Progetto di sicurezza in ambiente residenziale e direzionale" },
-  { src: gallery3, alt: "Installazione componenti per percorsi e delimitazioni sicure" },
-  { src: gallery4, alt: "Intervento su struttura con esigenze di protezione e conformità" },
-  { src: gallery5, alt: "Dettaglio impianto e ambienti commerciali" },
-  { src: gallery6, alt: "Manutenzione e verifica in contesto edilizio" },
-  { src: gallery7, alt: "Cantiere e allestimento sistemi di sicurezza" },
-  { src: gallery8, alt: "Controllo accessi e sicurezza attiva sull'area" },
+  {
+    src: "/gallery-amg-soluzioni-antincendio-1.jpg",
+    alt: "AMG Sistemi — soluzione antincendio su impianto e contesto strutturale",
+  },
+  {
+    src: "/gallery-amg-soluzioni-antincendio-2.jpg",
+    alt: "AMG Sistemi — progetto sicurezza e conformità normativa",
+  },
+  {
+    src: "/gallery-amg-soluzioni-antincendio-3.jpg",
+    alt: "AMG Sistemi — installazione componenti rilevazione e protezione",
+  },
+  {
+    src: "/gallery-amg-soluzioni-antincendio-4.jpg",
+    alt: "AMG Sistemi — intervento su struttura con esigenze antincendio",
+  },
+  {
+    src: "/gallery-amg-soluzioni-antincendio-5.jpg",
+    alt: "AMG Sistemi — dettaglio impianto in ambiente commerciale o produttivo",
+  },
+  {
+    src: "/gallery-amg-soluzioni-antincendio-6.jpeg",
+    alt: "AMG Sistemi — manutenzione, verifica e assistenza su sistemi di sicurezza",
+  },
 ];
 
 const Gallery = () => {
@@ -31,19 +38,17 @@ const Gallery = () => {
             Esperienza sul tutto il territorio
           </h2>
           <p className="text-muted-foreground text-lg">
-            Alcuni ambiti in cui AMG Sistemi affianca clienti con impianti, manutenzione e assistenza continua — dalla rilevazione allo spegnimento, fino a porte tagliafuoco e uscite di sicurezza.
+            Alcuni ambiti in cui AMG Sistemi affianca clienti con impianti, manutenzione e assistenza continua — dalla
+            rilevazione allo spegnimento, fino a porte tagliafuoco e uscite di sicurezza.
           </p>
         </header>
 
-        {/* Gallery Grid - 2 cols mobile, 4 cols desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {/* Griglia 3+3: 2 colonne su mobile, 3 su md+ */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
           {images.map((image, index) => (
-            <div 
-              key={index}
-              className="relative group overflow-hidden rounded-xl aspect-square"
-            >
-              <img 
-                src={image.src} 
+            <div key={index} className="relative group overflow-hidden rounded-xl aspect-square">
+              <img
+                src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
