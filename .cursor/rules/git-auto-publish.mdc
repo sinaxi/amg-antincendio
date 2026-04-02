@@ -1,0 +1,21 @@
+---
+description: Dopo modifiche al codice, commit e push su origin senza attendere richiesta esplicita
+alwaysApply: true
+---
+
+# Pubblicazione Git automatica (AMG Antincendio)
+
+Quando completi un intervento che modifica file nel repository (codice, asset, config):
+
+1. Esegui `git status` e includi in commit solo i file pertinenti al task (evita di committare roba non richiesta).
+2. `git add` sui file coinvolti.
+3. `git commit -m "..."` con messaggio chiaro in italiano o inglese (cosa è cambiato e perché, in una riga o breve frase).
+4. `git push origin` sul branch corrente (di solito `main`).
+
+**Eccezioni** (non committare/pushare senza che l’utente lo chieda esplicitamente):
+
+- L’utente ha detto di non committare, di lavorare solo in locale, o di preparare una PR senza push.
+- Non ci sono modifiche reali da versionare.
+- Le credenziali Git/remoto non sono disponibili nell’ambiente: in quel caso spiega cosa fare in locale.
+
+Dopo `npm install`, la cartella `.githooks` è collegata come `core.hooksPath`: ogni commit fatto **da terminale o da altri tool** esegue anche `git push` verso `origin`. Se il push fallisce, il commit resta valido; va ripetuto il push a mano.

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Push automatico dopo ogni commit (attivo con: git config core.hooksPath .githooks)
+# Impostato da npm run prepare su clone/install.
+
+branch=$(git symbolic-ref --short HEAD 2>/dev/null) || exit 0
+git push origin "$branch"
