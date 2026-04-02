@@ -33,7 +33,7 @@ const Hero = () => {
       <div className="absolute inset-0 hero-overlay" />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-2 md:px-4 text-center pb-16 md:pb-20 lg:pb-24">
+      <div className="relative z-10 container mx-auto px-2 md:px-4 text-center pb-16 md:pb-10 lg:pb-12">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="font-display font-bold text-primary-foreground mb-4 mt-28 md:mt-16 lg:mt-20 animate-fade-in-up opacity-0 animation-delay-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
@@ -110,7 +110,7 @@ const Hero = () => {
           </div>
 
           {/* Stats (solo tablet/desktop) */}
-          <div className="hidden md:grid grid-cols-3 gap-8 mt-12 pt-8 pb-14 lg:pb-16 mb-10 md:mb-12 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
+          <div className="hidden md:grid grid-cols-3 gap-8 mt-12 pt-8 pb-7 lg:pb-8 mb-5 md:mb-6 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
             <div className="text-center">
               <div className="text-2xl md:text-4xl font-bold text-primary-foreground whitespace-nowrap">100+</div>
               <div className="text-primary-foreground/70 text-xs md:text-sm">Progetti</div>
