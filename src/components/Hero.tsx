@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
-const heroBackgroundUrl = "/soluzioni-professionali-antincendio.jpg";
+const heroBackgroundDesktopUrl = "/soluzioni-professionali-antincendio.jpg";
+const heroBackgroundMobileUrl = "/background-mobile.jpg";
 
 const heroFeatures = [
   "Sistemi testati e certificati",
@@ -16,10 +17,15 @@ const Hero = () => {
     });
   };
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pt-24 lg:pt-28">
-      {/* Background Image */}
+      {/* Sfondo mobile: immagine dedicata a tutta area */}
       <div
-        className="absolute inset-0 bg-neutral-950 bg-center bg-no-repeat bg-contain md:bg-cover"
-        style={{ backgroundImage: `url(${heroBackgroundUrl})` }}
+        className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat bg-neutral-950"
+        style={{ backgroundImage: `url(${heroBackgroundMobileUrl})` }}
+      />
+      {/* Sfondo desktop: invariato */}
+      <div
+        className="absolute inset-0 hidden md:block bg-neutral-950 bg-center bg-no-repeat bg-cover"
+        style={{ backgroundImage: `url(${heroBackgroundDesktopUrl})` }}
       />
       
       {/* Dark Overlay */}
