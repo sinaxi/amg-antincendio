@@ -3,13 +3,13 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItemsDesktop = [
-  { label: "Servizi", href: "#vantaggi" },
+  { label: "Servizi", href: "#servizi" },
   { label: "Soluzioni", href: "#prodotti" },
   { label: "Perché AMG", href: "#wpc" },
 ];
 
 const navItemsMobile = [
-  { label: "Servizi", href: "#vantaggi" },
+  { label: "Servizi", href: "#servizi" },
   { label: "Soluzioni", href: "#prodotti" },
   { label: "Perché AMG", href: "#wpc" },
   { label: "Galleria", href: "#galleria" },
