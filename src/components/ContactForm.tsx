@@ -97,9 +97,9 @@ const ContactForm = () => {
                 ricontatteremo al più presto.
               </p>
 
-              {/* Contact Info */}
-              <div className="space-y-6 flex flex-col items-center lg:items-start">
-                <div className="flex items-start gap-4">
+              {/* Contact Info: allineati a sinistra anche su mobile */}
+              <div className="space-y-6 flex flex-col items-stretch w-full text-left">
+                <div className="flex items-start gap-4 w-full justify-start">
                   <div className="w-12 h-12 bg-primary-foreground/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <Factory className="w-5 h-5" />
                   </div>
@@ -127,7 +127,7 @@ const ContactForm = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 w-full justify-start">
                   <div className="w-12 h-12 bg-primary-foreground/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
