@@ -3,6 +3,12 @@ import { ChevronDown } from "lucide-react";
 
 const heroBackgroundUrl = "/soluzioni-professionali-antincendio.jpg";
 
+const heroFeatures = [
+  "Sistemi testati e certificati",
+  "Compliance normativa",
+  "Assistenza tecnica h24",
+] as const;
+
 const Hero = () => {
   const scrollToContact = () => {
     document.getElementById("contatti")?.scrollIntoView({
@@ -39,17 +45,36 @@ const Hero = () => {
             Progetti su misura, conformi alle normative vigenti
           </p>
 
-          {/* Features List: 2×2 su mobile, una riga su md+ */}
-          <ul className="grid grid-cols-2 gap-3 md:flex md:flex-nowrap md:justify-center md:gap-4 mb-10 animate-fade-in-up opacity-0 animation-delay-300 w-full max-w-md md:max-w-none mx-auto">
-            {["Sistemi testati e certificati", "Compliance normativa", "Assistenza tecnica h24"].map((feature, index) => (
+          {/* Mobile: solo 2 voci, stessa riga, in un box centrato arrotondato */}
+          <div
+            className="md:hidden mb-10 w-full max-w-lg mx-auto rounded-2xl bg-foreground/30 backdrop-blur-sm border border-primary-foreground/15 px-3 py-3.5 shadow-sm animate-fade-in-up opacity-0 animation-delay-300"
+            role="list"
+          >
+            <div className="grid grid-cols-2 gap-x-2 sm:gap-x-4 items-center">
+              {heroFeatures.slice(0, 2).map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-start justify-center gap-2 min-w-0"
+                  role="listitem"
+                >
+                  <span className="w-2 h-2 bg-accent rounded-full shrink-0 mt-1" aria-hidden />
+                  <span className="font-bold text-primary-foreground text-[11px] sm:text-xs leading-snug text-left">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: tre pillole in riga */}
+          <ul className="hidden md:flex md:flex-nowrap md:justify-center md:gap-4 mb-10 animate-fade-in-up opacity-0 animation-delay-300 mx-auto">
+            {heroFeatures.map((feature, index) => (
               <li
                 key={index}
-                className="flex items-start gap-2 bg-foreground/30 backdrop-blur-sm px-3 py-2 rounded-xl md:items-center md:rounded-full md:px-4 min-w-0"
+                className="flex items-center gap-2 bg-foreground/30 backdrop-blur-sm px-4 py-2 rounded-full min-w-0"
               >
-                <span className="w-2 h-2 bg-accent rounded-full shrink-0 mt-1.5 md:mt-0" aria-hidden />
-                <span className="font-bold text-primary-foreground text-xs sm:text-sm md:text-base leading-snug md:leading-normal md:whitespace-nowrap text-left">
-                  {feature}
-                </span>
+                <span className="w-2 h-2 bg-accent rounded-full shrink-0" aria-hidden />
+                <span className="font-bold text-primary-foreground text-base whitespace-nowrap">{feature}</span>
               </li>
             ))}
           </ul>
