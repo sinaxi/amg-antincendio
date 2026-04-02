@@ -25,15 +25,6 @@ const Footer = () => {
               <p className="font-semibold text-zinc-50">AMG sistemi S.r.l.</p>
               <p>Via Manifattura V. Olcese, 58</p>
               <p>25047 – Darfo Boario Terme (BS)</p>
-              <p>
-                <a href="tel:+393342933220" className="hover:text-zinc-50 transition-colors">Tel. 334 293 3220</a>
-              </p>
-              <p>
-                <a href="mailto:info@amgsistemi.it" className="hover:text-zinc-50 transition-colors">info@amgsistemi.it</a>
-              </p>
-              <p>
-                <a href="https://www.amgsistemi.it" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-50 transition-colors">www.amgsistemi.it</a>
-              </p>
             </address>
           </div>
 
@@ -42,7 +33,7 @@ const Footer = () => {
             <h4 className="font-semibold text-lg md:text-lg mb-4 text-zinc-50">Assistenza</h4>
             <address className="not-italic text-zinc-300 space-y-1 text-base md:text-sm">
               <p>Assistenza tecnica h24 per interventi tempestivi.</p>
-              <p>Consulenza gratuita e preventivi personalizzati su richiesta.</p>
+              <p>Consulenza gratuita e preventivi personalizzati tramite il modulo contatti in questa pagina.</p>
             </address>
           </div>
         </div>

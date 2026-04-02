@@ -36,7 +36,7 @@ const faqItems = [
   },
   {
     question: "Come richiedo un preventivo?",
-    answer: "Compila il modulo contatti in questa pagina, chiama il 334 293 3220 o scrivi a info@amgsistemi.it. Ti ricontatteremo per fissare sopralluogo e inviarti un preventivo personalizzato."
+    answer: "Compila il modulo contatti in questa pagina: è l’unico canale per le richieste. Ti ricontatteremo per fissare sopralluogo e inviarti un preventivo personalizzato."
   }
 ];
 

@@ -70,7 +70,7 @@ const ContactForm = () => {
       console.error("Error preparing mailto:", error);
       toast({
         title: "Errore",
-        description: `Scrivi direttamente a ${CONTACT_EMAIL} o chiama il 334 293 3220.`,
+        description: "Non è stato possibile preparare l’invio. Riprova tra qualche istante.",
         variant: "destructive",
       });
     } finally {
@@ -93,8 +93,8 @@ const ContactForm = () => {
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
                 Siamo pronti a offrirvi una consulenza gratuita per valutare le esigenze di protezione antincendio.
-                Per un sopralluogo o un preventivo personalizzato sulla vostra attività, scriveteci o chiamateci: vi
-                ricontatteremo al più presto.
+                Per un sopralluogo o un preventivo personalizzato sulla vostra attività utilizza il modulo qui accanto:
+                ti ricontatteremo al più presto.
               </p>
 
               {/* Contact Info: allineati a sinistra anche su mobile */}
@@ -107,23 +107,7 @@ const ContactForm = () => {
                     <div className="text-sm text-primary-foreground/70 mb-1">AMG sistemi S.r.l.</div>
                     <div className="font-semibold text-sm md:text-base">
                       Via Manifattura V. Olcese, 58<br />
-                      25047 – Darfo Boario Terme (BS)<br />
-                      <a href="tel:+393342933220" className="underline underline-offset-2 hover:opacity-90">
-                        Tel. 334 293 3220
-                      </a>
-                      <br />
-                      <a href={`mailto:${CONTACT_EMAIL}`} className="underline underline-offset-2 hover:opacity-90">
-                        {CONTACT_EMAIL}
-                      </a>
-                      <br />
-                      <a
-                        href="https://www.amgsistemi.it"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline underline-offset-2 hover:opacity-90"
-                      >
-                        www.amgsistemi.it
-                      </a>
+                      25047 – Darfo Boario Terme (BS)
                     </div>
                   </div>
                 </div>
@@ -148,8 +132,8 @@ const ContactForm = () => {
                 Contattaci per informazioni
               </h3>
               <p className="text-sm text-muted-foreground mb-6">
-                Compila i campi e premi Invia: si aprirà la tua app di posta con il messaggio pronto da inviare a{" "}
-                {CONTACT_EMAIL}.
+                Compila i campi e premi Invia: si aprirà la tua app di posta con il messaggio già compilato. Invia
+                l&apos;email per trasmettere la richiesta ad AMG Sistemi.
               </p>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
