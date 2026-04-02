@@ -66,8 +66,8 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 pt-8 pb-10 md:pb-14 lg:pb-16 mb-10 md:mb-12 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
+          {/* Stats (solo tablet/desktop) */}
+          <div className="hidden md:grid grid-cols-3 gap-8 mt-12 pt-8 pb-14 lg:pb-16 mb-10 md:mb-12 border-t border-primary-foreground/20 animate-fade-in-up opacity-0 animation-delay-500">
             <div className="text-center">
               <div className="text-2xl md:text-4xl font-bold text-primary-foreground whitespace-nowrap">100+</div>
               <div className="text-primary-foreground/70 text-xs md:text-sm">Progetti</div>
