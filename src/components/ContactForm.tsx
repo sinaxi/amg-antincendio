@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Factory, MapPin } from "lucide-react";
-import { getSupabase, isSupabaseConfigured } from "@/integrations/supabase/client";
+
+const CONTACT_EMAIL = "info@amgsistemi.it";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -14,61 +15,42 @@ const ContactForm = () => {
     email: "",
     telefono: "",
     provincia: "",
-    messaggio: ""
+    messaggio: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const getClientIp = async (): Promise<string> => {
-    try {
-      const response = await fetch("https://api.ipify.org?format=json");
-      const data = await response.json();
-      return data.ip;
-    } catch {
-      return "unknown";
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const supabase = getSupabase();
-      if (!supabase) {
-        toast({
-          title: "Invio non disponibile",
-          description:
-            "Il modulo online non è configurato su questo ambiente. Contattaci a info@amgsistemi.it o al 334 293 3220.",
-          variant: "destructive",
-        });
-        return;
+      const subject = encodeURIComponent("Richiesta contatto — sito AMG Sistemi");
+      const lines = [
+        `Nome: ${formData.nome}`,
+        `Email: ${formData.email}`,
+        `Telefono: ${formData.telefono}`,
+        `Provincia: ${formData.provincia}`,
+        "",
+        formData.messaggio.trim() || "(nessun messaggio aggiuntivo)",
+        "",
+        `— Pagina: ${window.location.href}`,
+      ];
+      let bodyText = lines.join("\n");
+      const maxLen = 1800;
+      if (bodyText.length > maxLen) {
+        bodyText = `${bodyText.slice(0, maxLen - 3)}...`;
       }
-
-      const clientIp = await getClientIp();
-
-      const { error } = await supabase.functions.invoke("submit-contact", {
-        body: {
-          name: formData.nome,
-          email: formData.email,
-          phone: formData.telefono,
-          province: formData.provincia,
-          userType: "Non indicato",
-          fenceLength: "",
-          message: formData.messaggio,
-          pageUrl: window.location.href,
-          clientIp: clientIp,
-        },
-      });
-
-      if (error) throw error;
+      const body = encodeURIComponent(bodyText);
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 
       toast({
-        title: "Richiesta Inviata!",
-        description: "Ti contatteremo al più presto per fornirti un preventivo personalizzato.",
+        title: "Apri il tuo programma email",
+        description:
+          "Dovrebbe aprirsi la posta con il messaggio già compilato. Invia l’email per completare la richiesta.",
       });
 
       setFormData({
@@ -76,13 +58,13 @@ const ContactForm = () => {
         email: "",
         telefono: "",
         provincia: "",
-        messaggio: ""
+        messaggio: "",
       });
-    } catch (error: any) {
-      console.error("Error submitting form:", error);
+    } catch (error) {
+      console.error("Error preparing mailto:", error);
       toast({
         title: "Errore",
-        description: "Si è verificato un errore nell'invio. Riprova più tardi.",
+        description: `Scrivi direttamente a ${CONTACT_EMAIL} o chiama il 334 293 3220.`,
         variant: "destructive",
       });
     } finally {
@@ -104,8 +86,9 @@ const ContactForm = () => {
                 Contattaci per le tue Soluzioni Antincendio Professionali
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-                Siamo pronti a offrirvi una consulenza gratuita per valutare le esigenze di protezione antincendio. 
-                Per un sopralluogo o un preventivo personalizzato sulla vostra attività, scriveteci o chiamateci: vi ricontatteremo al più presto.
+                Siamo pronti a offrirvi una consulenza gratuita per valutare le esigenze di protezione antincendio.
+                Per un sopralluogo o un preventivo personalizzato sulla vostra attività, scriveteci o chiamateci: vi
+                ricontatteremo al più presto.
               </p>
 
               {/* Contact Info */}
@@ -119,9 +102,22 @@ const ContactForm = () => {
                     <div className="font-semibold text-sm md:text-base">
                       Via Manifattura V. Olcese, 58<br />
                       25047 – Darfo Boario Terme (BS)<br />
-                      <a href="tel:+393342933220" className="underline underline-offset-2 hover:opacity-90">Tel. 334 293 3220</a><br />
-                      <a href="mailto:info@amgsistemi.it" className="underline underline-offset-2 hover:opacity-90">info@amgsistemi.it</a><br />
-                      <a href="https://www.amgsistemi.it" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-90">www.amgsistemi.it</a>
+                      <a href="tel:+393342933220" className="underline underline-offset-2 hover:opacity-90">
+                        Tel. 334 293 3220
+                      </a>
+                      <br />
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="underline underline-offset-2 hover:opacity-90">
+                        {CONTACT_EMAIL}
+                      </a>
+                      <br />
+                      <a
+                        href="https://www.amgsistemi.it"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-2 hover:opacity-90"
+                      >
+                        www.amgsistemi.it
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -142,22 +138,13 @@ const ContactForm = () => {
 
             {/* Right - Form */}
             <div className="bg-card rounded-2xl p-8 shadow-xl">
-              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 whitespace-nowrap">
+              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-2 whitespace-nowrap">
                 Contattaci per informazioni
               </h3>
-              {!isSupabaseConfigured() && (
-                <p className="text-sm text-muted-foreground bg-muted/80 rounded-lg px-4 py-3 mb-5 border border-border">
-                  L&apos;invio dal sito sarà attivo quando sono configurate le variabili Supabase sul server. Puoi scrivere a{" "}
-                  <a href="mailto:info@amgsistemi.it" className="text-primary font-medium underline underline-offset-2">
-                    info@amgsistemi.it
-                  </a>{" "}
-                  o chiamare il{" "}
-                  <a href="tel:+393342933220" className="text-primary font-medium underline underline-offset-2">
-                    334 293 3220
-                  </a>
-                  .
-                </p>
-              )}
+              <p className="text-sm text-muted-foreground mb-6">
+                Compila i campi e premi Invia: si aprirà la tua app di posta con il messaggio pronto da inviare a{" "}
+                {CONTACT_EMAIL}.
+              </p>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="nome" className="block text-sm font-medium text-foreground mb-2">
@@ -251,15 +238,9 @@ const ContactForm = () => {
                   </label>
                 </div>
 
-                <Button
-                  type="submit"
-                  variant="default"
-                  size="xl"
-                  className="w-full"
-                  disabled={isSubmitting || !isSupabaseConfigured()}
-                >
+                <Button type="submit" variant="default" size="xl" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? (
-                    "Invio in corso..."
+                    "Apertura in corso..."
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
