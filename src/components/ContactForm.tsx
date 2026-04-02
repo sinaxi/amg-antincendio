@@ -12,6 +12,8 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
+    azienda: "",
+    settore: "",
     email: "",
     telefono: "",
     provincia: "",
@@ -31,6 +33,8 @@ const ContactForm = () => {
       const subject = encodeURIComponent("Richiesta contatto — sito AMG Sistemi");
       const lines = [
         `Nome: ${formData.nome}`,
+        `Azienda: ${formData.azienda.trim() || "—"}`,
+        `Settore: ${formData.settore.trim() || "—"}`,
         `Email: ${formData.email}`,
         `Telefono: ${formData.telefono}`,
         `Provincia: ${formData.provincia}`,
@@ -55,6 +59,8 @@ const ContactForm = () => {
 
       setFormData({
         nome: "",
+        azienda: "",
+        settore: "",
         email: "",
         telefono: "",
         provincia: "",
@@ -158,6 +164,37 @@ const ContactForm = () => {
                     value={formData.nome}
                     onChange={handleChange}
                     placeholder="Mario Rossi"
+                    className="bg-background"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="azienda" className="block text-sm font-medium text-foreground mb-2">
+                    Azienda
+                  </label>
+                  <Input
+                    id="azienda"
+                    name="azienda"
+                    type="text"
+                    value={formData.azienda}
+                    onChange={handleChange}
+                    placeholder="Ragione sociale o insegna"
+                    className="bg-background"
+                    autoComplete="organization"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="settore" className="block text-sm font-medium text-foreground mb-2">
+                    Settore
+                  </label>
+                  <Input
+                    id="settore"
+                    name="settore"
+                    type="text"
+                    value={formData.settore}
+                    onChange={handleChange}
+                    placeholder="Es. Industria, commercio, sanità, ufficio…"
                     className="bg-background"
                   />
                 </div>
