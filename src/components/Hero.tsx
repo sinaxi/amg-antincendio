@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 const heroBackgroundDesktopUrl = "/soluzioni-professionali-antincendio.jpg";
-const heroBackgroundMobileUrl = "/background-mobile.jpg";
+const heroBackgroundMobileUrl = "/background-mobile-small.jpg";
 
 const heroFeatures = [
   "Sistemi testati e certificati",
