@@ -39,12 +39,19 @@ const Hero = () => {
             Progetti su misura, conformi alle normative vigenti
           </p>
 
-          {/* Features List */}
-          <ul className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 animate-fade-in-up opacity-0 animation-delay-300 md:flex-nowrap">
-            {["Sistemi testati e certificati", "Compliance normativa", "Assistenza tecnica h24", "Centinaia di progetti realizzati"].map((feature, index) => <li key={index} className="flex items-center gap-2 bg-foreground/30 backdrop-blur-sm px-4 py-2 rounded-full">
-                <span className="w-2 h-2 bg-accent rounded-full" />
-                <span className="font-bold text-primary-foreground text-sm md:text-base whitespace-nowrap">{feature}</span>
-              </li>)}
+          {/* Features List: 2×2 su mobile, una riga su md+ */}
+          <ul className="grid grid-cols-2 gap-3 md:flex md:flex-nowrap md:justify-center md:gap-4 mb-10 animate-fade-in-up opacity-0 animation-delay-300 w-full max-w-md md:max-w-none mx-auto">
+            {["Sistemi testati e certificati", "Compliance normativa", "Assistenza tecnica h24", "Centinaia di progetti realizzati"].map((feature, index) => (
+              <li
+                key={index}
+                className="flex items-start gap-2 bg-foreground/30 backdrop-blur-sm px-3 py-2 rounded-xl md:items-center md:rounded-full md:px-4 min-w-0"
+              >
+                <span className="w-2 h-2 bg-accent rounded-full shrink-0 mt-1.5 md:mt-0" aria-hidden />
+                <span className="font-bold text-primary-foreground text-xs sm:text-sm md:text-base leading-snug md:leading-normal md:whitespace-nowrap text-left">
+                  {feature}
+                </span>
+              </li>
+            ))}
           </ul>
 
           {/* CTA Buttons */}
