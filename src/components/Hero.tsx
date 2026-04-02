@@ -52,7 +52,7 @@ const Hero = () => {
             <Button variant="hero" size="xl" onClick={scrollToContact} className="btn-glow">
               Richiedi Preventivo Gratuito
             </Button>
-            <Button variant="heroOutline" size="xl" onClick={() => document.getElementById("prodotti")?.scrollIntoView({
+            <Button variant="heroOutline" size="xl" onClick={() => document.getElementById("servizi")?.scrollIntoView({
             behavior: "smooth"
           })} className="bg-primary-foreground/10 backdrop-blur-sm">
               Scopri i Servizi

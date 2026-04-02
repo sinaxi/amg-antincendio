@@ -15,10 +15,10 @@ const industrialItems = [
 
 const TargetAudience = () => {
   return (
-    <section className="pt-4 md:pt-6 pb-12 md:pb-20 bg-background">
+    <section id="servizi" className="scroll-mt-28 md:scroll-mt-32 pt-4 md:pt-6 pb-12 md:pb-20 bg-background" aria-labelledby="servizi-heading">
       <div className="container mx-auto px-4">
         <header className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-wide uppercase">
+          <h2 id="servizi-heading" className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-wide uppercase">
             I Nostri servizi
           </h2>
         </header>
