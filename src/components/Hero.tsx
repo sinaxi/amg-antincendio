@@ -16,7 +16,7 @@ const Hero = () => {
       behavior: "smooth"
     });
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pt-24 lg:pt-28">
+  return <section className="relative flex items-center justify-center overflow-x-hidden overflow-y-auto overscroll-y-contain md:overflow-hidden min-h-[320px] h-[min(72dvh,600px)] md:min-h-screen md:h-auto md:pt-24 lg:pt-28">
       {/* Sfondo mobile: immagine dedicata a tutta area */}
       <div
         className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat bg-neutral-950"
@@ -33,10 +33,10 @@ const Hero = () => {
       <div className="absolute inset-0 hero-overlay" />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-2 md:px-4 text-center pb-16 md:pb-10 lg:pb-12">
+      <div className="relative z-10 container mx-auto px-2 md:px-4 text-center pb-10 md:pb-10 lg:pb-12">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
-          <h1 className="font-display font-bold text-primary-foreground mb-4 mt-28 md:mt-16 lg:mt-20 animate-fade-in-up opacity-0 animation-delay-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+          <h1 className="font-display font-bold text-primary-foreground mb-3 md:mb-4 mt-20 md:mt-16 lg:mt-20 animate-fade-in-up opacity-0 animation-delay-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             <span className="block drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] leading-[1.1] md:leading-tight">
               <span className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 SOLUZIONI ANTINCENDIO{" "}
@@ -47,13 +47,13 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="block w-full max-w-xl mx-auto font-display text-base sm:text-lg md:text-2xl lg:text-[1.6875rem] text-primary-foreground font-medium tracking-tight mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-4 sm:px-6 py-3 rounded-2xl md:rounded-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] text-balance leading-snug">
+          <p className="block w-full max-w-xl mx-auto font-display text-base sm:text-lg md:text-2xl lg:text-[1.6875rem] text-primary-foreground font-medium tracking-tight mb-5 md:mb-8 animate-fade-in-up opacity-0 animation-delay-200 bg-foreground/40 backdrop-blur-sm px-4 sm:px-6 py-2.5 md:py-3 rounded-2xl md:rounded-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] text-balance leading-snug">
             Progetti su misura, conformi alle normative vigenti
           </p>
 
           {/* Mobile: solo 2 voci, stessa riga, in un box centrato arrotondato */}
           <div
-            className="md:hidden mb-10 w-full max-w-lg mx-auto rounded-2xl bg-foreground/30 backdrop-blur-sm border border-primary-foreground/15 px-3 py-3.5 shadow-sm animate-fade-in-up opacity-0 animation-delay-300"
+            className="md:hidden mb-5 w-full max-w-lg mx-auto rounded-2xl bg-foreground/30 backdrop-blur-sm border border-primary-foreground/15 px-3 py-3.5 shadow-sm animate-fade-in-up opacity-0 animation-delay-300"
             role="list"
           >
             <div className="grid grid-cols-2 gap-x-2 sm:gap-x-4 items-center">
@@ -130,7 +130,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <button onClick={() => document.getElementById("vantaggi")?.scrollIntoView({
       behavior: "smooth"
-    })} className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors animate-float">
+    })} className="absolute bottom-2 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors animate-float">
         <ChevronDown className="w-8 h-8" />
       </button>
     </section>;
