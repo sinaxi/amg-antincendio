@@ -41,20 +41,44 @@ const ProductShowcase = () => {
 
     const isMobile = () => window.innerWidth < MD_BREAKPOINT;
 
+    let sectionVisible = false;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const e = entries[0];
+        sectionVisible = Boolean(e?.isIntersecting && e.intersectionRatio > 0.12);
+      },
+      { threshold: [0, 0.12, 0.25, 0.5, 1] }
+    );
+    io.observe(el);
+
+    const scrollCarouselToIndex = (container: HTMLDivElement, index: number) => {
+      const slides = container.querySelectorAll<HTMLElement>("[data-showcase-slide]");
+      const slide = slides[index];
+      if (!slide) return;
+
+      const cRect = container.getBoundingClientRect();
+      const sRect = slide.getBoundingClientRect();
+      const slideCenter = sRect.left + sRect.width / 2;
+      const containerCenter = cRect.left + cRect.width / 2;
+      const delta = slideCenter - containerCenter;
+      const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth);
+      const nextLeft = Math.max(0, Math.min(container.scrollLeft + delta, maxScroll));
+      container.scrollTo({ left: nextLeft, behavior: "smooth" });
+    };
+
     const tick = () => {
-      if (!isMobile()) return;
+      if (!isMobile() || !sectionVisible) return;
       const slides = el.querySelectorAll<HTMLElement>("[data-showcase-slide]");
       if (slides.length === 0) return;
       slideIndexRef.current = (slideIndexRef.current + 1) % slides.length;
-      slides[slideIndexRef.current].scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-      });
+      scrollCarouselToIndex(el, slideIndexRef.current);
     };
 
     const id = window.setInterval(tick, AUTO_SCROLL_MS);
-    return () => window.clearInterval(id);
+    return () => {
+      io.disconnect();
+      window.clearInterval(id);
+    };
   }, []);
 
   return (
