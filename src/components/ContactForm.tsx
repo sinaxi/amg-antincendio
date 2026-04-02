@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Factory, MapPin } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { getSupabase, isSupabaseConfigured } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -37,8 +37,19 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      const supabase = getSupabase();
+      if (!supabase) {
+        toast({
+          title: "Invio non disponibile",
+          description:
+            "Il modulo online non è configurato su questo ambiente. Contattaci a info@amgsistemi.it o al 334 293 3220.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       const clientIp = await getClientIp();
-      
+
       const { error } = await supabase.functions.invoke("submit-contact", {
         body: {
           name: formData.nome,
@@ -134,6 +145,19 @@ const ContactForm = () => {
               <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 whitespace-nowrap">
                 Contattaci per informazioni
               </h3>
+              {!isSupabaseConfigured() && (
+                <p className="text-sm text-muted-foreground bg-muted/80 rounded-lg px-4 py-3 mb-5 border border-border">
+                  L&apos;invio dal sito sarà attivo quando sono configurate le variabili Supabase sul server. Puoi scrivere a{" "}
+                  <a href="mailto:info@amgsistemi.it" className="text-primary font-medium underline underline-offset-2">
+                    info@amgsistemi.it
+                  </a>{" "}
+                  o chiamare il{" "}
+                  <a href="tel:+393342933220" className="text-primary font-medium underline underline-offset-2">
+                    334 293 3220
+                  </a>
+                  .
+                </p>
+              )}
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="nome" className="block text-sm font-medium text-foreground mb-2">
@@ -227,12 +251,12 @@ const ContactForm = () => {
                   </label>
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   variant="default"
-                  size="xl" 
+                  size="xl"
                   className="w-full"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !isSupabaseConfigured()}
                 >
                   {isSubmitting ? (
                     "Invio in corso..."
