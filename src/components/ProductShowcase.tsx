@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 const showcaseImages = [
@@ -19,10 +20,42 @@ const showcaseImages = [
   },
 ];
 
+const AUTO_SCROLL_MS = 4200;
+const MD_BREAKPOINT = 768;
+
 const ProductShowcase = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const slideIndexRef = useRef(0);
+
   const scrollToContact = () => {
     document.getElementById("contatti")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const isMobile = () => window.innerWidth < MD_BREAKPOINT;
+
+    const tick = () => {
+      if (!isMobile()) return;
+      const slides = el.querySelectorAll<HTMLElement>("[data-showcase-slide]");
+      if (slides.length === 0) return;
+      slideIndexRef.current = (slideIndexRef.current + 1) % slides.length;
+      slides[slideIndexRef.current].scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    };
+
+    const id = window.setInterval(tick, AUTO_SCROLL_MS);
+    return () => window.clearInterval(id);
+  }, []);
 
   return (
     <section id="prodotti" className="pt-20 md:pt-28 pb-10 md:pb-14 bg-background">
@@ -36,11 +69,15 @@ const ProductShowcase = () => {
             Soluzioni personalizzate su misura
           </h2>
           {/* Desktop: 4 col grid / Mobile: horizontal scroll */}
-          <div className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
+          <div
+            ref={scrollRef}
+            className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth"
+          >
             {showcaseImages.map((image, index) => (
               <div
                 key={index}
-                className="group rounded-xl overflow-hidden border border-foreground/12 shadow-lg snap-center w-[75vw] min-w-[75vw] md:w-full md:min-w-0 transition-all duration-300 ease-out hover:border-foreground/22 hover:shadow-2xl hover:shadow-black/20 md:hover:-translate-y-0.5"
+                data-showcase-slide
+                className="group rounded-xl overflow-hidden border border-foreground/12 shadow-lg snap-center snap-always w-[75vw] min-w-[75vw] md:w-full md:min-w-0 transition-all duration-300 ease-out hover:border-foreground/22 hover:shadow-2xl hover:shadow-black/20 md:hover:-translate-y-0.5"
               >
                 <img
                   src={image.src}
