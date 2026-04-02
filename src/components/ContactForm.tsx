@@ -162,7 +162,7 @@ const ContactForm = () => {
                     type="text"
                     value={formData.azienda}
                     onChange={handleChange}
-                    placeholder="Ragione sociale o insegna"
+                    placeholder="Ragione sociale"
                     className="bg-background"
                     autoComplete="organization"
                   />
