@@ -3,12 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { getLeadAttribution } from "@/lib/leadAttribution";
+import { isGoogleSheetLeadConfigured, submitLeadToSheet } from "@/lib/submitLeadToSheet";
 import { Send, Factory, MapPin } from "lucide-react";
 
 const CONTACT_EMAIL = "info@amgsistemi.it";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const sheetEnabled = isGoogleSheetLeadConfigured();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
@@ -25,37 +28,70 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const subject = encodeURIComponent("Richiesta contatto — sito AMG Sistemi");
-      const lines = [
-        `Nome: ${formData.nome}`,
-        `Azienda: ${formData.azienda.trim() || "—"}`,
-        `Settore: ${formData.settore.trim() || "—"}`,
-        `Email: ${formData.email}`,
-        `Telefono: ${formData.telefono}`,
-        `Provincia: ${formData.provincia}`,
-        "",
-        formData.messaggio.trim() || "(nessun messaggio aggiuntivo)",
-        "",
-        `— Pagina: ${window.location.href}`,
-      ];
-      let bodyText = lines.join("\n");
-      const maxLen = 1800;
-      if (bodyText.length > maxLen) {
-        bodyText = `${bodyText.slice(0, maxLen - 3)}...`;
-      }
-      const body = encodeURIComponent(bodyText);
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      if (sheetEnabled) {
+        const attr = getLeadAttribution(window.location.href, document.referrer || "");
+        const { ok } = await submitLeadToSheet({
+          nome: formData.nome.trim(),
+          azienda: formData.azienda.trim(),
+          settore: formData.settore.trim(),
+          provincia: formData.provincia.trim(),
+          email: formData.email.trim(),
+          telefono: formData.telefono.trim(),
+          messaggio: formData.messaggio.trim(),
+          data: new Date().toISOString(),
+          sorgente: attr.sorgente,
+          campagna: attr.campagna,
+          adset: attr.adset,
+          ad: attr.ad,
+          pageUrl: attr.pageUrl,
+        });
 
-      toast({
-        title: "Apri il tuo programma email",
-        description:
-          "Dovrebbe aprirsi la posta con il messaggio già compilato. Invia l’email per completare la richiesta.",
-      });
+        if (!ok) {
+          toast({
+            title: "Errore di invio",
+            description: "Non è stato possibile registrare la richiesta. Riprova tra qualche istante.",
+            variant: "destructive",
+          });
+          return;
+        }
+
+        toast({
+          title: "Richiesta inviata",
+          description: "Grazie: abbiamo registrato i tuoi dati e ti ricontatteremo al più presto.",
+        });
+      } else {
+        const subject = encodeURIComponent("Richiesta contatto — sito AMG Sistemi");
+        const lines = [
+          `Nome: ${formData.nome}`,
+          `Azienda: ${formData.azienda.trim() || "—"}`,
+          `Settore: ${formData.settore.trim() || "—"}`,
+          `Email: ${formData.email}`,
+          `Telefono: ${formData.telefono}`,
+          `Provincia: ${formData.provincia}`,
+          "",
+          formData.messaggio.trim() || "(nessun messaggio aggiuntivo)",
+          "",
+          `— Pagina: ${window.location.href}`,
+        ];
+        let bodyText = lines.join("\n");
+        const maxLen = 1800;
+        if (bodyText.length > maxLen) {
+          bodyText = `${bodyText.slice(0, maxLen - 3)}...`;
+        }
+        const body = encodeURIComponent(bodyText);
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+        toast({
+          title: "Apri il tuo programma email",
+          description:
+            "Dovrebbe aprirsi la posta con il messaggio già compilato. Invia l’email per completare la richiesta.",
+        });
+      }
 
       setFormData({
         nome: "",
@@ -67,10 +103,10 @@ const ContactForm = () => {
         messaggio: "",
       });
     } catch (error) {
-      console.error("Error preparing mailto:", error);
+      console.error("Contact submit error:", error);
       toast({
         title: "Errore",
-        description: "Non è stato possibile preparare l’invio. Riprova tra qualche istante.",
+        description: "Non è stato possibile completare l’invio. Riprova tra qualche istante.",
         variant: "destructive",
       });
     } finally {
@@ -132,8 +168,17 @@ const ContactForm = () => {
                 Contattaci per informazioni
               </h3>
               <p className="text-sm text-muted-foreground mb-6">
-                Compila i campi e premi Invia: si aprirà la tua app di posta con il messaggio già compilato. Invia
-                l&apos;email per trasmettere la richiesta ad AMG Sistemi.
+                {sheetEnabled ? (
+                  <>
+                    Compila i campi e premi Invia: la richiesta viene registrata in modo sicuro; ti ricontatteremo al
+                    più presto.
+                  </>
+                ) : (
+                  <>
+                    Compila i campi e premi Invia: si aprirà la tua app di posta con il messaggio già compilato. Invia
+                    l&apos;email per trasmettere la richiesta ad AMG Sistemi.
+                  </>
+                )}
               </p>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
@@ -261,7 +306,7 @@ const ContactForm = () => {
 
                 <Button type="submit" variant="default" size="xl" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? (
-                    "Apertura in corso..."
+                    sheetEnabled ? "Invio in corso..." : "Apertura in corso..."
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
