@@ -16,24 +16,59 @@ export type LeadSheetRowPayload = LeadFormPayload &
     data: string;
   };
 
-const WEBAPP_URL = import.meta.env.VITE_GOOGLE_SHEETS_WEBAPP_URL as string | undefined;
+const WEBAPP_URL = (import.meta.env.VITE_GOOGLE_SHEETS_WEBAPP_URL as string | undefined)?.trim();
+const LEADS_SHEET_FLAG = import.meta.env.VITE_LEADS_SHEET === "true";
 
+const apiOrigin = (import.meta.env.VITE_LEAD_API_ORIGIN as string | undefined)?.replace(/\/$/, "") ?? "";
+
+/**
+ * True se il modulo deve tentare la registrazione sul foglio.
+ * - URL script nel client (VITE_GOOGLE_SHEETS_WEBAPP_URL), oppure
+ * - VITE_LEADS_SHEET=true (URL solo lato server: GOOGLE_SHEETS_WEBAPP_URL su Vercel).
+ */
 export function isGoogleSheetLeadConfigured(): boolean {
-  return Boolean(WEBAPP_URL?.trim());
+  return LEADS_SHEET_FLAG || Boolean(WEBAPP_URL);
 }
 
 /**
- * Invia il lead allo script Google Apps (POST). Usa `no-cors` perché l'endpoint
- * di script.google.com non espone CORS leggibile dal browser; il foglio riceve comunque i dati.
+ * 1) POST a /api/submit-lead-sheet (Vercel) — consigliato in produzione: risposta reale dallo script.
+ * 2) In locale senza API, fallback POST diretto allo script (no-cors, esito non verificabile).
  */
 export async function submitLeadToSheet(payload: LeadSheetRowPayload): Promise<{ ok: boolean }> {
-  const url = WEBAPP_URL?.trim();
-  if (!url) {
+  if (!isGoogleSheetLeadConfigured()) {
+    return { ok: false };
+  }
+
+  const apiPath = "/api/submit-lead-sheet";
+  const apiUrl = apiOrigin ? `${apiOrigin}${apiPath}` : apiPath;
+
+  try {
+    const r = await fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (r.ok) {
+      const j = (await r.json().catch(() => ({}))) as { ok?: boolean };
+      return { ok: j.ok !== false };
+    }
+
+    // Proxy attivo ma errore (es. script Google)
+    if (r.status !== 404) {
+      return { ok: false };
+    }
+  } catch {
+    /* nessun endpoint /api (es. solo vite) → fallback sotto */
+  }
+
+  const directUrl = WEBAPP_URL;
+  if (!directUrl) {
     return { ok: false };
   }
 
   try {
-    await fetch(url, {
+    await fetch(directUrl, {
       method: "POST",
       mode: "no-cors",
       headers: {

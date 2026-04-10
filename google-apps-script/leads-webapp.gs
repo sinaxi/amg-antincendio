@@ -6,7 +6,8 @@
  * 3. Deploy → Nuova distribuzione → Tipo "App web"
  *    - Esegui come: Me
  *    - Chi ha accesso: Chiunque (o "Chiunque con link Google" se disponibile)
- * 4. Copia l'URL dell'app web in VITE_GOOGLE_SHEETS_WEBAPP_URL nel progetto Vite.
+ * 4. Copia l'URL /exec in Vercel: GOOGLE_SHEETS_WEBAPP_URL (consigliato) e/o
+ *    VITE_GOOGLE_SHEETS_WEBAPP_URL; oppure solo server URL + VITE_LEADS_SHEET=true.
  */
 
 var SPREADSHEET_ID = "1KpYINWsnrVBvbhaqnvRnFQJV6XqN5jUXJotx9Fe6g0I";
