@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { getLeadAttribution } from "@/lib/leadAttribution";
+import { buildLeadPayload } from "@/lib/buildLeadPayload";
 import { isGoogleSheetLeadConfigured, submitLeadToSheet } from "@/lib/submitLeadToSheet";
+import { sendLeadNotificationEmail } from "@/lib/sendLeadEmail";
 import { Send, Factory, MapPin } from "lucide-react";
 
 const CONTACT_EMAIL = "info@amgsistemi.it";
@@ -33,38 +34,23 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      if (sheetEnabled) {
-        const attr = getLeadAttribution(window.location.href, document.referrer || "");
-        const { ok } = await submitLeadToSheet({
-          nome: formData.nome.trim(),
-          azienda: formData.azienda.trim(),
-          settore: formData.settore.trim(),
-          provincia: formData.provincia.trim(),
-          email: formData.email.trim(),
-          telefono: formData.telefono.trim(),
-          messaggio: formData.messaggio.trim(),
-          data: new Date().toISOString(),
-          sorgente: attr.sorgente,
-          campagna: attr.campagna,
-          adset: attr.adset,
-          ad: attr.ad,
-          pageUrl: attr.pageUrl,
-        });
+      const payload = buildLeadPayload(formData, window.location.href, document.referrer || "");
 
-        if (!ok) {
-          toast({
-            title: "Errore di invio",
-            description: "Non è stato possibile registrare la richiesta. Riprova tra qualche istante.",
-            variant: "destructive",
-          });
-          return;
-        }
+      const [emailRes, sheetRes] = await Promise.all([
+        sendLeadNotificationEmail(payload),
+        sheetEnabled ? submitLeadToSheet(payload) : Promise.resolve({ ok: true }),
+      ]);
 
+      if (sheetEnabled && !sheetRes.ok) {
         toast({
-          title: "Richiesta inviata",
-          description: "Grazie: abbiamo registrato i tuoi dati e ti ricontatteremo al più presto.",
+          title: "Errore di invio",
+          description: "Non è stato possibile registrare la richiesta. Riprova tra qualche istante.",
+          variant: "destructive",
         });
-      } else {
+        return;
+      }
+
+      if (!sheetEnabled && !emailRes.ok) {
         const subject = encodeURIComponent("Richiesta contatto — sito AMG Sistemi");
         const lines = [
           `Nome: ${formData.nome}`,
@@ -89,7 +75,19 @@ const ContactForm = () => {
         toast({
           title: "Apri il tuo programma email",
           description:
-            "Dovrebbe aprirsi la posta con il messaggio già compilato. Invia l’email per completare la richiesta.",
+            "L’invio automatico non è disponibile da qui: si è aperta la posta con il messaggio già compilato. Invia l’email per trasmettere la richiesta ad AMG Sistemi.",
+        });
+      } else {
+        const emailFailed = !emailRes.ok;
+        toast({
+          title: "Richiesta inviata",
+          description: sheetEnabled
+            ? emailFailed
+              ? "Dati registrati. La notifica email al team non è partita: controlla la configurazione del server."
+              : "Grazie: abbiamo registrato i tuoi dati e il team è stato avvisato. Ti ricontatteremo al più presto."
+            : emailFailed
+              ? "Grazie per aver compilato il modulo. Ti ricontatteremo al più presto."
+              : "Grazie: il team è stato avvisato per email. Ti ricontatteremo al più presto.",
         });
       }
 
@@ -170,13 +168,13 @@ const ContactForm = () => {
               <p className="text-sm text-muted-foreground mb-6">
                 {sheetEnabled ? (
                   <>
-                    Compila i campi e premi Invia: la richiesta viene registrata in modo sicuro; ti ricontatteremo al
-                    più presto.
+                    Compila i campi e premi Invia: la richiesta viene registrata e il team riceve una notifica per
+                    email; ti ricontatteremo al più presto.
                   </>
                 ) : (
                   <>
-                    Compila i campi e premi Invia: si aprirà la tua app di posta con il messaggio già compilato. Invia
-                    l&apos;email per trasmettere la richiesta ad AMG Sistemi.
+                    Compila i campi e premi Invia: il team riceve una notifica per email. Se l’invio automatico non è
+                    disponibile (es. in ambiente locale), si aprirà la posta con il messaggio già compilato.
                   </>
                 )}
               </p>
@@ -305,9 +303,7 @@ const ContactForm = () => {
                 </div>
 
                 <Button type="submit" variant="default" size="xl" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? (
-                    sheetEnabled ? "Invio in corso..." : "Apertura in corso..."
-                  ) : (
+                  {isSubmitting ? "Invio in corso..." : (
                     <>
                       <Send className="w-5 h-5" />
                       Invia Richiesta
