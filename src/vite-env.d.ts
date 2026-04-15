@@ -1,5 +1,11 @@
 /// <reference types="vite/client" />
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 interface ImportMetaEnv {
   /** URL dell'app web Google Apps Script che esegue doPost e append sul foglio */
   readonly VITE_GOOGLE_SHEETS_WEBAPP_URL?: string;

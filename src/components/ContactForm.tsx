@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { buildLeadPayload } from "@/lib/buildLeadPayload";
 import { isGoogleSheetLeadConfigured, submitLeadToSheet } from "@/lib/submitLeadToSheet";
 import { sendLeadNotificationEmail } from "@/lib/sendLeadEmail";
+import { trackMetaLead } from "@/lib/metaPixel";
 import { Send, Factory, MapPin } from "lucide-react";
 
 const CONTACT_EMAIL = "info@amgsistemi.it";
@@ -90,6 +91,8 @@ const ContactForm = () => {
               : "Grazie: il team è stato avvisato per email. Ti ricontatteremo al più presto.",
         });
       }
+
+      trackMetaLead();
 
       setFormData({
         nome: "",
